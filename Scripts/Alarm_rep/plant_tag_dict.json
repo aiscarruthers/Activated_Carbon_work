@@ -1,0 +1,2262 @@
+{
+  "2V80545OF": {
+    "desc": "TK804 Control Valve Failed to Open",
+    "Plant_Area": "8"
+  },
+  "PIT10279_IN": {
+    "desc": "OSF T101 DOME SEAL PRESSURE",
+    "Plant_Area": "1"
+  },
+  "LT90701": {
+    "desc": "TK903 CARBON SILO LEVEL L92",
+    "Plant_Area": "9"
+  },
+  "FIT10239_IN": {
+    "desc": "OS MILL SUCTION AIR FLOW",
+    "Plant_Area": "1"
+  },
+  "M105ATRQLOAL": {
+    "desc": "M105A DISCHARGER LOW TORQUE ALARM",
+    "Plant_Area": "1"
+  },
+  "2FCV60106LAL": {
+    "desc": "RW FLOW TO KILN SCRUB F23 LOW",
+    "Plant_Area": "6"
+  },
+  "2F28DEVAL": {
+    "desc": "PHOS ACID TRANSFER F28 DEV",
+    "Plant_Area": "7"
+  },
+  "2LSH20101AL": {
+    "desc": "DAY SILO HIGH LEVEL",
+    "Plant_Area": "2"
+  },
+  "V503BFL": {
+    "desc": "V503B BLENDER B",
+    "Plant_Area": "5"
+  },
+  "V503BRFL": {
+    "desc": "V503B BLENDER ROCON",
+    "Plant_Area": "5"
+  },
+  "2PH01HIAL": {
+    "desc": "EFF TO SEWER PH01 HIGH",
+    "Plant_Area": "7"
+  },
+  "V50730FL": {
+    "desc": "T505 OUTER INLET VALVE",
+    "Plant_Area": "5"
+  },
+  "V50843FL": {
+    "desc": "T511 MAIN VENT VALVE",
+    "Plant_Area": "5"
+  },
+  "2LT30204HIAL": {
+    "desc": "L03 ML TANK HIGH LEVEL",
+    "Plant_Area": "3"
+  },
+  "FLOW1_FLT": {
+    "desc": "MFB A NO PRODUCT FLOWING",
+    "Plant_Area": "0"
+  },
+  "2PH01LOAL": {
+    "desc": "EFF TO SEWER PH01 LOW",
+    "Plant_Area": "7"
+  },
+  "A110_OPENALM": {
+    "desc": "A-110 MAGNETIC GRATE OPEN",
+    "Plant_Area": "1"
+  },
+  "2TC40202DVAL": {
+    "desc": "DRYER OUTLET TEMP T06 DEV",
+    "Plant_Area": "4"
+  },
+  "LCV30204HI": {
+    "desc": "1st Wash/ML Tank Hot Line High Output",
+    "Plant_Area": "3"
+  },
+  "2F11DEVAL": {
+    "desc": "PHOS ACID TO RTRN TANK F11 DEV",
+    "Plant_Area": "7"
+  },
+  "TCV40202HI": {
+    "desc": "DRYER CARBON BED  HI TEMP",
+    "Plant_Area": "4"
+  },
+  "PT50226": {
+    "desc": "CARMILL PRESS BEFORE MILL P51",
+    "Plant_Area": "5"
+  },
+  "PT50226_LO": {
+    "desc": "CARMILL PRESS BEFORE MILL P51 LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "PT50226_LOLO": {
+    "desc": "CARMILL PRESS BEFORE MILL P51 LOW LOW AL",
+    "Plant_Area": "5"
+  },
+  "FCV50283_HI": {
+    "desc": "CARMILL AIR TO FILTER F51 HIGH ALARM",
+    "Plant_Area": "5"
+  },
+  "FCV50283_HIHI": {
+    "desc": "CARMILL AIR TO FILTER F51 HIGH HIGH ALAR",
+    "Plant_Area": "5"
+  },
+  "AT50248_HIHI": {
+    "desc": "CARMILL FILTER DUST MONITOR HIGH HIGH AL",
+    "Plant_Area": "5"
+  },
+  "AT50248_HI": {
+    "desc": "CARMILL FILTER DUST MONITOR HIGH ALARM",
+    "Plant_Area": "5"
+  },
+  "PT50226_HI": {
+    "desc": "CARMILL PRESS BEFORE MILL P51 HIGH ALARM",
+    "Plant_Area": "5"
+  },
+  "PT50280_HI": {
+    "desc": "CARMILL AFTER CYCLONE P54 HIGH ALARM",
+    "Plant_Area": "5"
+  },
+  "PT50280_HIHI": {
+    "desc": "CARMILL AFTER CYCLONE P54 HIGH HIGH ALAR",
+    "Plant_Area": "5"
+  },
+  "ST50204": {
+    "desc": "CARMILL CLASSIFIER SPEED S53",
+    "Plant_Area": "5"
+  },
+  "PT50225_HI": {
+    "desc": "CARMILL BEFORE CLASSIFIER P52 HIGH ALARM",
+    "Plant_Area": "5"
+  },
+  "PT50225_HIHI": {
+    "desc": "CARMILL BEFORE CLASSIFIER P52 HIGH HIGH",
+    "Plant_Area": "5"
+  },
+  "ST50204_LO": {
+    "desc": "CARMILL CLASSIFIER SPEED S53 LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "ST50204_LOLO": {
+    "desc": "CARMILL CLASSIFIER SPEED S53 LOW LOW ALA",
+    "Plant_Area": "5"
+  },
+  "PT50226_HIHI": {
+    "desc": "CARMILL PRESS BEFORE MILL P51 HIGH HIGH",
+    "Plant_Area": "5"
+  },
+  "PT50282_HI": {
+    "desc": "CARMILL BEFORE CYCLONE P53 HIGH ALARM",
+    "Plant_Area": "5"
+  },
+  "PT50282_HIHI": {
+    "desc": "CARMILL BEFORE CYCLONE P53 HIGH HIGH ALA",
+    "Plant_Area": "5"
+  },
+  "FT50281": {
+    "desc": "CARMILL AIR TO MILL FAN F52",
+    "Plant_Area": "5"
+  },
+  "FT50281_LO": {
+    "desc": "CARMILL AIR TO MILL FAN F52 LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "3U056ALM02": {
+    "desc": "CARMILL LUBE OIL LOW LEVEL",
+    "Plant_Area": "5"
+  },
+  "PT50225FL": {
+    "desc": "CARMILL BEFORE CLASSIFIER P52",
+    "Plant_Area": "5"
+  },
+  "ST50203_LO": {
+    "desc": "CARMILL MOTOR SPEED S54 LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "ST50203_LOLO": {
+    "desc": "CARMILL MOTOR SPEED S54 LOW LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "ST50203": {
+    "desc": "CARMILL MOTOR SPEED S54",
+    "Plant_Area": "5"
+  },
+  "IT50201LO": {
+    "desc": "CARBON MILL LOW CURRENT (MILL EMPTY)",
+    "Plant_Area": "5"
+  },
+  "T510EXPRS": {
+    "desc": "T510 EXTENDED PRESSURISATION",
+    "Plant_Area": "5"
+  },
+  "M105AFL": {
+    "desc": "KILNS SILO A FWD DISCHARGER",
+    "Plant_Area": "1"
+  },
+  "LT50817_LO": {
+    "desc": "TK513 LEVEL LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "LT50817_LOLO": {
+    "desc": "TK513 LEVEL LOW LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "LSH10122AL": {
+    "desc": "WODSILO TK101B HIGH LEVEL",
+    "Plant_Area": "1"
+  },
+  "IT10157FL": {
+    "desc": "WODMILL A CUURENT I1A",
+    "Plant_Area": "1"
+  },
+  "T510EXFILL": {
+    "desc": "T510 EXTENDED FILLING TIME",
+    "Plant_Area": "5"
+  },
+  "PT60101HI": {
+    "desc": "V601 KILN EXH GAS PLATE SCRUB PRESS HIGH",
+    "Plant_Area": "6"
+  },
+  "PT60101LO": {
+    "desc": "V601 KILN EXH GAS PLATE SCRUB PRESS LOW",
+    "Plant_Area": "6"
+  },
+  "PT10162FL": {
+    "desc": "A101 FILTER PRESS DROP P2",
+    "Plant_Area": "1"
+  },
+  "2PH01LOLOAL": {
+    "desc": "EFF TO SEWER PH01 LOW LOW",
+    "Plant_Area": "7"
+  },
+  "2FT70126HIAL": {
+    "desc": "CAUSTIC FROM TK704 F18 HI FLOW",
+    "Plant_Area": "7"
+  },
+  "M510RFL": {
+    "desc": "FIBC DUST RV ROCON",
+    "Plant_Area": "5"
+  },
+  "M510FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "5"
+  },
+  "V50730IFL": {
+    "desc": "T505 INFLATE OUTER SEAL",
+    "Plant_Area": "5"
+  },
+  "2F09DVAL": {
+    "desc": "ML TO RETURN TANK F09 DEV",
+    "Plant_Area": "3"
+  },
+  "2F11HIOPAL": {
+    "desc": "PHOS ACID TO RT TANK F11 HIOP",
+    "Plant_Area": "7"
+  },
+  "2FT30203DVAL": {
+    "desc": "F07 1ST WASH TO DIGESTER DEV",
+    "Plant_Area": "3"
+  },
+  "2F09HIOPAL": {
+    "desc": "ML TO RETURN TANK F09 HIGH OUT",
+    "Plant_Area": "3"
+  },
+  "2KILNCAL": {
+    "desc": "KILN C ALARM",
+    "Plant_Area": "2"
+  },
+  "2TT20421DVAL": {
+    "desc": "CARBON TEMP KILN C T03 DEV",
+    "Plant_Area": "2"
+  },
+  "2DT70140HIAL": {
+    "desc": "ML TO RETURN TANK DENSITY HIGH",
+    "Plant_Area": "7"
+  },
+  "DT70140FL": {
+    "desc": "D02 ML TO RETURN TK702",
+    "Plant_Area": "7"
+  },
+  "2CT30250HIAL": {
+    "desc": "CONDUCT TO DRAIN C02 HIGH",
+    "Plant_Area": "3"
+  },
+  "2FT30257DVAL": {
+    "desc": "F27 2ND WATER WASH DEVIATION",
+    "Plant_Area": "3"
+  },
+  "WT90230": {
+    "desc": "V901 MIXER WEIGHT W93",
+    "Plant_Area": "9"
+  },
+  "WT90230FL": {
+    "desc": "Weight Transmitter  WT90230FL",
+    "Plant_Area": "9"
+  },
+  "2LT70129HIAL": {
+    "desc": "CAUSTIC TANK TK704 HIGH LEVEL",
+    "Plant_Area": "7"
+  },
+  "AT50248_LO": {
+    "desc": "CARMILL FILTER DUST MONITOR LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "AT50248_LOLO": {
+    "desc": "CARMILL FILTER DUST MONITOR LOW LOW ALAR",
+    "Plant_Area": "5"
+  },
+  "IT5025_HI": {
+    "desc": "CARMILL CLASSIFIER LOAD I52 HIGH ALARM",
+    "Plant_Area": "5"
+  },
+  "PT50282_LO": {
+    "desc": "CARMILL BEFORE CYCLONE P53 LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "PT50282_LOLO": {
+    "desc": "CARMILL BEFORE CYCLONE P53 LOW LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "F50281OPHA": {
+    "desc": "F52 HIGH OUTPUT",
+    "Plant_Area": "5"
+  },
+  "F50281OPHH": {
+    "desc": "F52 HIHI OUT. STOP FEED ACTIVE",
+    "Plant_Area": "5"
+  },
+  "T511EXPRS": {
+    "desc": "T511 EXTENDED PRESSURISATION",
+    "Plant_Area": "5"
+  },
+  "TCV40202HIHI": {
+    "desc": "DRYER CARBON BED HIHI TEMP",
+    "Plant_Area": "4"
+  },
+  "T511EXFILL": {
+    "desc": "T511 EXTENDED FILLING TIME",
+    "Plant_Area": "5"
+  },
+  "2FT60104HIAL": {
+    "desc": "KILN GAS FROM V601 F16 HI FLOW",
+    "Plant_Area": "6"
+  },
+  "P713FL": {
+    "desc": "P713 Glycol Cooling System Pump Failed",
+    "Plant_Area": "7"
+  },
+  "PT60510LO": {
+    "desc": "PT60510 TRANSMITTER LOW PRESSURE",
+    "Plant_Area": "6"
+  },
+  "CT30239": {
+    "desc": "C01 ADD WASH TK 309",
+    "Plant_Area": "3"
+  },
+  "PT50297FL": {
+    "desc": "SPLITER AFTER J502 PRESS P58",
+    "Plant_Area": "5"
+  },
+  "2F04DEVAL": {
+    "desc": "PHOS ACID TO KILN A F04 DEV",
+    "Plant_Area": "2"
+  },
+  "2KILNAAL": {
+    "desc": "KILN A ALARM",
+    "Plant_Area": "2"
+  },
+  "2LT30214HIAL": {
+    "desc": "1ST WASH TANK HIGH LEVEL",
+    "Plant_Area": "3"
+  },
+  "M105ANOCOMMS": {
+    "desc": "M105A Profibus Comms",
+    "Plant_Area": "1"
+  },
+  "FS10119AL": {
+    "desc": "WODSILO L105 CHOKE DETECTED",
+    "Plant_Area": "1"
+  },
+  "FS10121AL": {
+    "desc": "WODSILO L106 CHOKE DETECTED",
+    "Plant_Area": "1"
+  },
+  "TSH10117AL": {
+    "desc": "WODSILO A105 HIGH TEMPERATURE",
+    "Plant_Area": "1"
+  },
+  "T504EXEMPTY": {
+    "desc": "T504 EXTENDED EMPTYING TIME",
+    "Plant_Area": "5"
+  },
+  "V50904CLSD": {
+    "desc": "V50904 CONFIRMED CLOSED",
+    "Plant_Area": "5"
+  },
+  "T509EXPRS": {
+    "desc": "T509 EXTENDED PRESSURISATION",
+    "Plant_Area": "5"
+  },
+  "EMERGENCY_CLOSE_V50353": {
+    "desc": "EMERGENCY INTERLOCK FOR V50353 (CARBON_B",
+    "Plant_Area": "5"
+  },
+  "ZS90252": {
+    "desc": "A904 FRONT DOOR OPEN",
+    "Plant_Area": "9"
+  },
+  "PT50720_HI": {
+    "desc": "TK510 PRESSURE HIGH ALARM",
+    "Plant_Area": "5"
+  },
+  "A110_HIALM": {
+    "desc": "A-110 HIGH LEVEL (TK-103)",
+    "Plant_Area": "1"
+  },
+  "T509EXFILL": {
+    "desc": "T509 EXTENDED FILLING TIME",
+    "Plant_Area": "5"
+  },
+  "K502FL": {
+    "desc": "CARMILL FILTER FAN",
+    "Plant_Area": "5"
+  },
+  "PT50208FL": {
+    "desc": "CARMILL F502 PRESSURE DROP",
+    "Plant_Area": "5"
+  },
+  "ZT50742AVG": {
+    "desc": "Wind Direction Average",
+    "Plant_Area": "5"
+  },
+  "2F08HIAL": {
+    "desc": "PRAYON WASH F08 WATER HI FLOW",
+    "Plant_Area": "3"
+  },
+  "2CT30239DVAL": {
+    "desc": "CONDUCT OF ADD WASH C01 DEV",
+    "Plant_Area": "3"
+  },
+  "P709FL": {
+    "desc": "ACID REUSED RECYCLE TK711 PUMP",
+    "Plant_Area": "7"
+  },
+  "2LSL70352AL": {
+    "desc": "P709 SUCTION PIPE EMPTY",
+    "Plant_Area": "7"
+  },
+  "2WT20409HIAL": {
+    "desc": "WOOD FLOW TO KLN C W03 HIGH",
+    "Plant_Area": "2"
+  },
+  "LSL50384": {
+    "desc": "V503A BLENDER A LOW LEVEL TO FIBC/T508",
+    "Plant_Area": "5"
+  },
+  "4WML_SFSYA": {
+    "desc": "SILO FEED SYSTEM ALARM",
+    "Plant_Area": "0"
+  },
+  "L105FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "1"
+  },
+  "L106FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "1"
+  },
+  "L106RFL": {
+    "desc": "WODSILO L106 CONVEYOR ROCON",
+    "Plant_Area": "1"
+  },
+  "M105BTRQLOAL": {
+    "desc": "M105B DISCHARGER LOW TORQUE ALARM",
+    "Plant_Area": "1"
+  },
+  "2TT20421LOAL": {
+    "desc": "CARBON TEMP KILN C T03 LOW",
+    "Plant_Area": "2"
+  },
+  "2LT70347LOAL": {
+    "desc": "L09 REUSED ACID TK711 LOW",
+    "Plant_Area": "7"
+  },
+  "2KILNBAL": {
+    "desc": "KILN B ALARM",
+    "Plant_Area": "2"
+  },
+  "2TT20321DVAL": {
+    "desc": "CARBON TEMP KILN B T02 DEV",
+    "Plant_Area": "2"
+  },
+  "2LT70347LLAL": {
+    "desc": "L09 REUSED ACID TK711 LOW LOW",
+    "Plant_Area": "7"
+  },
+  "3U033ALM01": {
+    "desc": "TK512/513 TO BINB NOT READY",
+    "Plant_Area": "5"
+  },
+  "2TT70203HIAL": {
+    "desc": "EFFLUENT TO SEWER T07 HIGH",
+    "Plant_Area": "7"
+  },
+  "2FCV60106DAL": {
+    "desc": "RW FLOW TO KILN SCRUB F23 DEV",
+    "Plant_Area": "6"
+  },
+  "2TT20221DVAL": {
+    "desc": "CARBON TEMP KILN A T01 DEV",
+    "Plant_Area": "2"
+  },
+  "2PH01HIHIAL": {
+    "desc": "Eff To Sewer PH01 Hi Hi",
+    "Plant_Area": "7"
+  },
+  "LSL50385": {
+    "desc": "V503B BLENDER B LOW LEVEL TO FIBC/T507",
+    "Plant_Area": "5"
+  },
+  "WINDAVG": {
+    "desc": "Wind Speed Average",
+    "Plant_Area": "0"
+  },
+  "2FT30256DVAL": {
+    "desc": "F26 1ST WATER WASH DEVIATION",
+    "Plant_Area": "3"
+  },
+  "IT50201_HI": {
+    "desc": "CARMILL MOTOR CURRENT I51 HIGH ALARM",
+    "Plant_Area": "5"
+  },
+  "3U060ALM01": {
+    "desc": "L504 IS NOT RUNNING",
+    "Plant_Area": "5"
+  },
+  "LAH71301_ALM": {
+    "desc": "EFFLUENT TANK TK-714 HIGH LEVEL",
+    "Plant_Area": "7"
+  },
+  "LAHH71310_ALM": {
+    "desc": "EFFLUENT TANK TK-714 HIGH HIGH LEVEL",
+    "Plant_Area": "7"
+  },
+  "P714C_FLT": {
+    "desc": "EFFLUENT TRANSFER PUMP P-714C FAULT",
+    "Plant_Area": "7"
+  },
+  "V50825FL": {
+    "desc": "T510 BALANCE VALVE",
+    "Plant_Area": "5"
+  },
+  "V90204BF": {
+    "desc": "V901 OUTLET  DOOR CLOSE FAILURE",
+    "Plant_Area": "9"
+  },
+  "V90204FL": {
+    "desc": "V901 OUTLET DOOR FAILURE",
+    "Plant_Area": "9"
+  },
+  "IT50201FL": {
+    "desc": "CARMILL MOTOR CURRENT I51",
+    "Plant_Area": "5"
+  },
+  "2LSH70348AL": {
+    "desc": "TK711 REUSED ACID HIGH LEVEL",
+    "Plant_Area": "7"
+  },
+  "M509FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "5"
+  },
+  "2FT30255DVAL": {
+    "desc": "F25 4TH WATER WASH DEVIATION",
+    "Plant_Area": "3"
+  },
+  "TSL50143ALM": {
+    "desc": "LAC SYSTEM RUNNING ALARM",
+    "Plant_Area": "5"
+  },
+  "V70203FL": {
+    "desc": "EMERG CAUSTIC SHUT-OFF VLV GENERAL FAIL",
+    "Plant_Area": "7"
+  },
+  "T507EXFILL": {
+    "desc": "T507 EXTENDED FILLING TIME",
+    "Plant_Area": "5"
+  },
+  "2F06DVAL": {
+    "desc": "PHOS ACID TO KILN C F06 DEV",
+    "Plant_Area": "2"
+  },
+  "V50231FL": {
+    "desc": "T501 INNER INLET VALVE",
+    "Plant_Area": "5"
+  },
+  "LSH50249AL": {
+    "desc": "CARMILL CYCLONE HIGH LEVEL",
+    "Plant_Area": "5"
+  },
+  "3U066ALM01": {
+    "desc": "MILL STOP DUE TO P51 PRESSURE",
+    "Plant_Area": "5"
+  },
+  "PT60801HI": {
+    "desc": "V608 CARBON DRY EXH DEMIST PRESS HIGH",
+    "Plant_Area": "6"
+  },
+  "FSL50860AL": {
+    "desc": "TK513 O2 ANALYSER LOW FLOW",
+    "Plant_Area": "5"
+  },
+  "PT90174": {
+    "desc": "TK902 WEIGH HOPPER PRESSURE",
+    "Plant_Area": "9"
+  },
+  "3U015ALM01": {
+    "desc": "T504 IS NOT READY TO START",
+    "Plant_Area": "5"
+  },
+  "EMERGENCY_CLOSE_V50360": {
+    "desc": "EMERGENCY INTERLOCK FOR V50360 (CARBON_B",
+    "Plant_Area": "5"
+  },
+  "2DRYAIRAL": {
+    "desc": "Dry Combustion Air Not Healthy",
+    "Plant_Area": "4"
+  },
+  "2TT40201HIAL": {
+    "desc": "DRYER INLET TEMP T04 HI",
+    "Plant_Area": "4"
+  },
+  "2DRYOUTAL": {
+    "desc": "CARBON DRYER FLAME OUT",
+    "Plant_Area": "4"
+  },
+  "2FT60213LOAL": {
+    "desc": "DRYER GAS TO STACK F17 LOW",
+    "Plant_Area": "6"
+  },
+  "2PT40204AL": {
+    "desc": "DRYER HOOD PRESSURE DEVIATION",
+    "Plant_Area": "4"
+  },
+  "2DRYONAL": {
+    "desc": "CARBON DRYER FLAME ON",
+    "Plant_Area": "4"
+  },
+  "LSH50222AL": {
+    "desc": "F503 FILTER HIGH LEVEL",
+    "Plant_Area": "5"
+  },
+  "2LT70350HIAL": {
+    "desc": "PHOS ACID TK712 HIGH LEVEL",
+    "Plant_Area": "7"
+  },
+  "M501FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "5"
+  },
+  "M501RFL": {
+    "desc": "GRAN CARBON SIEVE RV ROCON",
+    "Plant_Area": "5"
+  },
+  "A501FL": {
+    "desc": "GRAN CARBON SIEVE",
+    "Plant_Area": "5"
+  },
+  "TK503HITEMP": {
+    "desc": "TK503 TEMPERATURE ABOVE 50 DEG",
+    "Plant_Area": "5"
+  },
+  "TCV90305LO": {
+    "desc": "D901 Dryer Zone 1 Steam Valve Low Temper",
+    "Plant_Area": "9"
+  },
+  "PT90413": {
+    "desc": "T904 PRESSURE P98",
+    "Plant_Area": "9"
+  },
+  "4TRP_TR05": {
+    "desc": "TRIP 5",
+    "Plant_Area": "0"
+  },
+  "4TRP_TR15": {
+    "desc": "TRIP 15",
+    "Plant_Area": "0"
+  },
+  "4TRP_TR18": {
+    "desc": "Trip 18 - T901 Explosion Protection Syst",
+    "Plant_Area": "9"
+  },
+  "4EMB_ACIDEX": {
+    "desc": "Extended ACID time",
+    "Plant_Area": "9"
+  },
+  "ZS90225": {
+    "desc": "A903 DOOR SAFETY TRIP",
+    "Plant_Area": "9"
+  },
+  "4TRP_TR07": {
+    "desc": "TRIP 7",
+    "Plant_Area": "0"
+  },
+  "A903_NOSWING": {
+    "desc": "A903 GREASE LOW FLOW",
+    "Plant_Area": "9"
+  },
+  "A904_NOSWING": {
+    "desc": "A904 GREASE LOW FLOW",
+    "Plant_Area": "9"
+  },
+  "IT90262FL": {
+    "desc": "I93 SIGNAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "IT90263FL": {
+    "desc": "I94 SIGNAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "TK903_FAIL": {
+    "desc": "TK903 Fault - Silo Panel Alarm Active",
+    "Plant_Area": "9"
+  },
+  "IT90260": {
+    "desc": "A903A DRIVE CURRENT I91",
+    "Plant_Area": "9"
+  },
+  "IT90260FL": {
+    "desc": "I91 SIGNAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "IT90260HI": {
+    "desc": "A903A DRIVE HIGH LOAD",
+    "Plant_Area": "9"
+  },
+  "IT90261HI": {
+    "desc": "A903B DRIVE HIGH LOAD",
+    "Plant_Area": "9"
+  },
+  "IT92061FL": {
+    "desc": "I92 SIGNAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "IT90261": {
+    "desc": "A903B DRIVE CURRENT I92",
+    "Plant_Area": "9"
+  },
+  "FS90206AL": {
+    "desc": "Pelletiser A903 No Flow Alarm",
+    "Plant_Area": "9"
+  },
+  "ZS90223": {
+    "desc": "A904 DOOR SAFETY TRIP",
+    "Plant_Area": "9"
+  },
+  "4TRP_TR08": {
+    "desc": "TRIP 8",
+    "Plant_Area": "0"
+  },
+  "IT90262": {
+    "desc": "A904A DRIVE CURRENT I93",
+    "Plant_Area": "9"
+  },
+  "IT90263": {
+    "desc": "A904B DRIVE CURRENT I94",
+    "Plant_Area": "9"
+  },
+  "IT90262HI": {
+    "desc": "A904A DRIVE HIGH LOAD",
+    "Plant_Area": "9"
+  },
+  "IT90263HI": {
+    "desc": "A904B DRIVE HIGH LOAD",
+    "Plant_Area": "9"
+  },
+  "FS90208AL": {
+    "desc": "Pelletiser A904 No Flow Alarm",
+    "Plant_Area": "9"
+  },
+  "2FT20422HIAL": {
+    "desc": "NATURAL GAS TO KILN C F03 HIGH",
+    "Plant_Area": "2"
+  },
+  "4EMB_RATEFLT": {
+    "desc": "Mix Cycle fault: Feed rate low",
+    "Plant_Area": "9"
+  },
+  "T508EXFILL": {
+    "desc": "T508 EXTENDED FILLING TIME",
+    "Plant_Area": "5"
+  },
+  "V50775FL": {
+    "desc": "T508 INNER INLET VALVE",
+    "Plant_Area": "5"
+  },
+  "PT90316": {
+    "desc": "D901 ZONE 1 PRESS (Check pelletiser)",
+    "Plant_Area": "9"
+  },
+  "TCV90307LO": {
+    "desc": "D901 Dryer Zone 3 Steam Valve Low Temper",
+    "Plant_Area": "9"
+  },
+  "WT50140": {
+    "desc": "LAC HOPPER WEIGHT",
+    "Plant_Area": "5"
+  },
+  "M111A_AMPS": {
+    "desc": "OS ACM MILL ROTOR CURRENT",
+    "Plant_Area": "1"
+  },
+  "L509FL": {
+    "desc": "LAC HOPPER TRANSFER SCREW",
+    "Plant_Area": "5"
+  },
+  "PT60301LO": {
+    "desc": "V603 CARBON DRY EXH SEPERATOR PRESS LOW",
+    "Plant_Area": "6"
+  },
+  "K105_AMPS": {
+    "desc": "OS MILL K105 FAN CURRENT",
+    "Plant_Area": "1"
+  },
+  "K105_AMPSFL": {
+    "desc": "K105 SUCTION FAN CURRENT",
+    "Plant_Area": "1"
+  },
+  "M111A_AMPSFL": {
+    "desc": "OLIVE STONE MILL ROTOR CURRENT",
+    "Plant_Area": "1"
+  },
+  "4EMB_MIXALM": {
+    "desc": "Mix Cycle fault: V901 failed",
+    "Plant_Area": "9"
+  },
+  "V901FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "V901STFL": {
+    "desc": "V901 MIXER STAR RUNNING",
+    "Plant_Area": "9"
+  },
+  "4EMB_TR05": {
+    "desc": "Mix Cycle fault: Trip 5",
+    "Plant_Area": "9"
+  },
+  "4EMB_TOTALEX": {
+    "desc": "Extended TOTAL time",
+    "Plant_Area": "9"
+  },
+  "V901RFL": {
+    "desc": "V901 MIXER ROCON",
+    "Plant_Area": "9"
+  },
+  "XC20104C": {
+    "desc": "DAY SILO TK-201 EPS",
+    "Plant_Area": "2"
+  },
+  "XC20104B": {
+    "desc": "DAY SILO TK-201 SAFETY RELAY SR2",
+    "Plant_Area": "2"
+  },
+  "XC20104A": {
+    "desc": "DAY SILO TK-201 SAFETY RELAY SR1",
+    "Plant_Area": "2"
+  },
+  "WT90206": {
+    "desc": "V902 BLENDER WEIGHT W92",
+    "Plant_Area": "9"
+  },
+  "TCV90306HAL": {
+    "desc": "D901 Dryer Zone 2 Steam Valve High Tempe",
+    "Plant_Area": "9"
+  },
+  "TCV90306HHAL": {
+    "desc": "D901 Dryer Zone 2 Steam Valve High HighT",
+    "Plant_Area": "9"
+  },
+  "TT90305": {
+    "desc": "D901 DRYER ZONE 1 TEMP T91",
+    "Plant_Area": "9"
+  },
+  "TT90306": {
+    "desc": "D901 DRYER ZONE 2 TEMP T92",
+    "Plant_Area": "9"
+  },
+  "TT90307": {
+    "desc": "D901 DRYER ZONE 3 TEMP T93",
+    "Plant_Area": "9"
+  },
+  "TT90308": {
+    "desc": "D901 DRYER ZONE 4 TEMP T94",
+    "Plant_Area": "9"
+  },
+  "TT90309": {
+    "desc": "D901 DRYER ZONE 5 TEMP T95",
+    "Plant_Area": "9"
+  },
+  "L904FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "D901FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "V902FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "2KILNCOUTAL": {
+    "desc": "KILN C FLAME OUT",
+    "Plant_Area": "2"
+  },
+  "2FT30203LOAL": {
+    "desc": "F07 1ST WASH TO DIGESTER LOW",
+    "Plant_Area": "3"
+  },
+  "2FT30205LOAL": {
+    "desc": "F09 ML TO RETURN TNK DEVIATION",
+    "Plant_Area": "3"
+  },
+  "2FT30226LOAL": {
+    "desc": "F08 PRAYON WATER WASH LOW FLOW",
+    "Plant_Area": "3"
+  },
+  "PT91001HI": {
+    "desc": "V910 RPLANT PLATE SCRB DEMIST PRESS HIGH",
+    "Plant_Area": "9"
+  },
+  "PT90404": {
+    "desc": "T903 PRESSURE P97",
+    "Plant_Area": "9"
+  },
+  "2F20LOAL": {
+    "desc": "NATURAL GAS TO BOILER F20 LOW",
+    "Plant_Area": "8"
+  },
+  "2V80545CF": {
+    "desc": "TK804 Control Valve Failed to Close",
+    "Plant_Area": "8"
+  },
+  "2TSL60215AL": {
+    "desc": "STACK DRAIN LOW TEMP",
+    "Plant_Area": "6"
+  },
+  "2TC40202LOAL": {
+    "desc": "DRYER OUTLET TEMP T06 LOW",
+    "Plant_Area": "4"
+  },
+  "2PSL80320AL": {
+    "desc": "STEAM LOW PRESSURE",
+    "Plant_Area": "8"
+  },
+  "FLOW2_FLT": {
+    "desc": "MFB B NO PRODUCT FLOWING",
+    "Plant_Area": "0"
+  },
+  "FAH71315_ALM": {
+    "desc": "EFFLUENT ACID DOSING HIGH FLOW",
+    "Plant_Area": "7"
+  },
+  "PSL10203_FLT": {
+    "desc": "HYDRAULIC 2 PRESSURE FAULT",
+    "Plant_Area": "1"
+  },
+  "TCV40202LO": {
+    "desc": "DRYER CARBON BED LO TEMP",
+    "Plant_Area": "4"
+  },
+  "TCV40202LOLO": {
+    "desc": "DRYER CARBON BED  LOLO TEMP",
+    "Plant_Area": "4"
+  },
+  "L903AFL": {
+    "desc": "L903A GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "L903BFL": {
+    "desc": "L903B GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "V902RFL": {
+    "desc": "V902 RIBBON BLENDER ROCON",
+    "Plant_Area": "9"
+  },
+  "V90204AF": {
+    "desc": "V901 OUTLET DOOR OPEN FAILURE",
+    "Plant_Area": "9"
+  },
+  "4EMB_DROPEX": {
+    "desc": "Extended DROP time",
+    "Plant_Area": "9"
+  },
+  "OAR070_DISP": {
+    "desc": "KILN C FLAME ON.",
+    "Plant_Area": "2"
+  },
+  "L210FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "2"
+  },
+  "L210RFL": {
+    "desc": "L210 ROCON FAILED",
+    "Plant_Area": "2"
+  },
+  "ST90304": {
+    "desc": "D901 DRYER CONVEYOR SPEED",
+    "Plant_Area": "9"
+  },
+  "FT90310": {
+    "desc": "D901 DRYER STEAM FLOW F92",
+    "Plant_Area": "9"
+  },
+  "4ET4_EXFILL": {
+    "desc": "T904 Extended Filling time",
+    "Plant_Area": "9"
+  },
+  "4ET3_EXFILL": {
+    "desc": "T903 Extended Filling time",
+    "Plant_Area": "9"
+  },
+  "TCV90308LO": {
+    "desc": "D901 Dryer Zone 4 Steam Valve Low Temper",
+    "Plant_Area": "9"
+  },
+  "TCV90308LLO": {
+    "desc": "D901 Dryer Zone 4 Steam Valve Low Low Te",
+    "Plant_Area": "9"
+  },
+  "V90420FL": {
+    "desc": "T904 OUTLET VALVE",
+    "Plant_Area": "9"
+  },
+  "PT30270": {
+    "desc": "P06 PRAYON WASH SUCTION",
+    "Plant_Area": "3"
+  },
+  "FT30205": {
+    "desc": "F09 ML TO RETURN TANK",
+    "Plant_Area": "3"
+  },
+  "2F10DEVAL": {
+    "desc": "ML TO DIGEST FLOW F10 DEV",
+    "Plant_Area": "3"
+  },
+  "2LSL70741AL": {
+    "desc": "TK707 Low Level",
+    "Plant_Area": "7"
+  },
+  "PT50297_LO": {
+    "desc": "SPLITER AFTER J502 PRESS P58 LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "B_LOOSEALM": {
+    "desc": "MFB B PLUG HANGING LOOSE",
+    "Plant_Area": "0"
+  },
+  "PT50297_LOLO": {
+    "desc": "SPLITER AFTER J502 PRESS P58 LOW LOW ALA",
+    "Plant_Area": "5"
+  },
+  "M518FAIL": {
+    "desc": "M518 FAILED",
+    "Plant_Area": "5"
+  },
+  "M518FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "5"
+  },
+  "PIT10278_IN": {
+    "desc": "OS T101 CONVEYING PRESS P12",
+    "Plant_Area": "1"
+  },
+  "F105_FULL": {
+    "desc": "OS F-105 HI LEVEL ALARM",
+    "Plant_Area": "1"
+  },
+  "2TT20351HHAL": {
+    "desc": "T18 KILN B BACK BOX TEMP HI HI",
+    "Plant_Area": "2"
+  },
+  "2TT20351HIAL": {
+    "desc": "T18 KILN B BACK BOX TEMP HIGH",
+    "Plant_Area": "2"
+  },
+  "TT20451FL": {
+    "desc": "T19 KILN C BACK BOX",
+    "Plant_Area": "2"
+  },
+  "LSH30101AL": {
+    "desc": "DIGESTER CHUTE CHOKED",
+    "Plant_Area": "3"
+  },
+  "PT91001": {
+    "desc": "V910 RPLANT PLATE SCRUBBER DEMIST PD",
+    "Plant_Area": "9"
+  },
+  "PT91001LO": {
+    "desc": "V910 RPLANT PLATE SCRB DEMIST PRESS LOW",
+    "Plant_Area": "9"
+  },
+  "F93LOAL": {
+    "desc": "RW TO ELCD DRY VEN F93 LO FLOW",
+    "Plant_Area": "9"
+  },
+  "290504LOAL": {
+    "desc": "RIVER WATER F24 LOW FLOW",
+    "Plant_Area": "6"
+  },
+  "FSL60116ILAL": {
+    "desc": "KILN C INTRLKD STPD ON LO J601C WTR FLOW",
+    "Plant_Area": "6"
+  },
+  "TT60603ILAL": {
+    "desc": "C KILN INTERLOCKED STOPPED ON HIGH T28",
+    "Plant_Area": "6"
+  },
+  "TE60102HI": {
+    "desc": "V601 KILN EXH GAS PLATE SCRUB TEMP HIGH",
+    "Plant_Area": "6"
+  },
+  "LAHH71316_ALM": {
+    "desc": "EFFLUENT TANK TK-713 HIGH HIGH LEVEL",
+    "Plant_Area": "7"
+  },
+  "AAH71307_ALM": {
+    "desc": "FINAL EFFLUENT PH HIGH - ENC",
+    "Plant_Area": "7"
+  },
+  "TCV30241LO": {
+    "desc": "PRAY ADDN WASH LO TEMP",
+    "Plant_Area": "3"
+  },
+  "2FT70204HIAL": {
+    "desc": "EFFLUENT TO SEWER F19 HI FLOW",
+    "Plant_Area": "7"
+  },
+  "TT60603HIAL": {
+    "desc": "T28 HIGH, C KILN WILL STOP IN 10 MINS",
+    "Plant_Area": "6"
+  },
+  "V50412FL": {
+    "desc": "BAGGING FILL LINE VENT VALVE",
+    "Plant_Area": "5"
+  },
+  "V50745FL": {
+    "desc": "T506 OUTER INLET VALVE",
+    "Plant_Area": "5"
+  },
+  "LSL50399AL": {
+    "desc": "V503B LOW LEVEL TO BAGGING",
+    "Plant_Area": "5"
+  },
+  "2DRYFLAL": {
+    "desc": "CARBON DRYER FLAME FAULT",
+    "Plant_Area": "4"
+  },
+  "FT30256FL": {
+    "desc": "F26 WATER WASH 1ST BANK",
+    "Plant_Area": "3"
+  },
+  "TK601_LEVLOC": {
+    "desc": "P604 LOW PRESSURE - CHECK TK601 LEVEL AN",
+    "Plant_Area": "6"
+  },
+  "FT30259FL": {
+    "desc": "ADDITIONAL WASH 1ST BANK FLOWMETER FAIL",
+    "Plant_Area": "3"
+  },
+  "FT30260FL": {
+    "desc": "ADDITIONAL WASH 2ND BANK FLOWMETER FAIL",
+    "Plant_Area": "3"
+  },
+  "V90519FL": {
+    "desc": "TK904 RIVER WATER FEED VALVE FAILED",
+    "Plant_Area": "9"
+  },
+  "PHT70202ABC": {
+    "desc": "PH SHUTDOWN",
+    "Plant_Area": "7"
+  },
+  "PHT70202CD": {
+    "desc": "PH01 PROBE C DEVIATION ALARM",
+    "Plant_Area": "7"
+  },
+  "PT30201HI": {
+    "desc": "V302 WASH FILTER SUCTION COND PRESS HIGH",
+    "Plant_Area": "3"
+  },
+  "LSL50398AL": {
+    "desc": "V503A LOW LEVEL TO BAGGING",
+    "Plant_Area": "5"
+  },
+  "V50745IFL": {
+    "desc": "T506 INFLATE OUTER SEAL",
+    "Plant_Area": "5"
+  },
+  "TCV30241LOLO": {
+    "desc": "PRAY ADDN WASH LOLO TEMP",
+    "Plant_Area": "3"
+  },
+  "LSH50264AL": {
+    "desc": "SPLITER HIGH LEVEL BELOW MESH",
+    "Plant_Area": "5"
+  },
+  "2PT80602LOAL": {
+    "desc": "P09 FIRE MAINS LOW PRESSURE",
+    "Plant_Area": "8"
+  },
+  "HS71301_ALM": {
+    "desc": "EF PLANT EMERGENCY SHOWER/EYEBATH ACTIVE",
+    "Plant_Area": "7"
+  },
+  "P715B_FLT": {
+    "desc": "EFFLUENT RECIRC PUMP P-715B FAULT",
+    "Plant_Area": "7"
+  },
+  "P715A_FLT": {
+    "desc": "EFFLUENT RECIRC PUMP P-715A FAULT",
+    "Plant_Area": "7"
+  },
+  "P804BFL": {
+    "desc": "SERV TOWNS WATER PUMP B",
+    "Plant_Area": "8"
+  },
+  "2PRAYONAL": {
+    "desc": "PRAYON ALARM",
+    "Plant_Area": "3"
+  },
+  "AAH71306_ALM": {
+    "desc": "EFFLUENT DISCHARGE / RECYCLE PH HIGH",
+    "Plant_Area": "7"
+  },
+  "2DT70114HIAL": {
+    "desc": "SUPPLY TANK DENSITY HIGH",
+    "Plant_Area": "7"
+  },
+  "FT70106": {
+    "desc": "F11 PHOS ACID TO TK706",
+    "Plant_Area": "7"
+  },
+  "AAT71306_ALM": {
+    "desc": "EFFLUENT DISCHARGE PH EXCURSION TIMEOUT",
+    "Plant_Area": "7"
+  },
+  "AAD71306_ALM": {
+    "desc": "EFFLUENT PLANT PH METERS DEVIATION ALARM",
+    "Plant_Area": "7"
+  },
+  "2DT70140LOAL": {
+    "desc": "ML TO RETURN TANK DENSITY LOW",
+    "Plant_Area": "7"
+  },
+  "FAH71305_ALM": {
+    "desc": "DISCHARGE / RECYCLE HIGH FLOW",
+    "Plant_Area": "7"
+  },
+  "LAH71302_ALM": {
+    "desc": "EFFLUENT TANK TK-713 HIGH LEVEL",
+    "Plant_Area": "7"
+  },
+  "FT60109LOAL": {
+    "desc": "KILN C VENTURI FLOW LOW",
+    "Plant_Area": "6"
+  },
+  "2FT60207LOAL": {
+    "desc": "WATER TO DRYER VENTURI F21 LOW",
+    "Plant_Area": "6"
+  },
+  "PT60401LOAL": {
+    "desc": "DEMISTER PUMP P604 LOW PRESSURE",
+    "Plant_Area": "6"
+  },
+  "PT40204": {
+    "desc": "P01 DRYER HOOD PRESURE",
+    "Plant_Area": "4"
+  },
+  "PT60404LOAL": {
+    "desc": "V601 LO DIF PRES KLNS WILL STOP IN 10MIN",
+    "Plant_Area": "6"
+  },
+  "2PSL60101AL": {
+    "desc": "K601 LOW PRESSURE ALARM",
+    "Plant_Area": "6"
+  },
+  "2DRYERAL": {
+    "desc": "DRYER ALARM",
+    "Plant_Area": "4"
+  },
+  "D401FL": {
+    "desc": "DRY CARBON DRYER DRIVE",
+    "Plant_Area": "4"
+  },
+  "D401RFL": {
+    "desc": "D401 ROCON FAILED",
+    "Plant_Area": "4"
+  },
+  "2FT90505LOAL": {
+    "desc": "F95 ELCD GAS FROM V903 LO FLOW",
+    "Plant_Area": "9"
+  },
+  "PT60801LO": {
+    "desc": "V608 CARBON DRY EXH DEMIST PRESS LOW",
+    "Plant_Area": "6"
+  },
+  "P712FL": {
+    "desc": "P712 DRYER VENTURI EFFLUENT PUMP FAILED",
+    "Plant_Area": "7"
+  },
+  "FT70701FL": {
+    "desc": "F33 COOLING SYSTEM FLOWMETER FAILURE",
+    "Plant_Area": "7"
+  },
+  "LCV30240HI": {
+    "desc": "PRAYN ADDN WASH HI LEV",
+    "Plant_Area": "3"
+  },
+  "PSL90312AL": {
+    "desc": "D901 STEAM PRESSURE LOW",
+    "Plant_Area": "9"
+  },
+  "2FT70701LOAL": {
+    "desc": "F33 DRYER VENTURI EFFLUENT LOW FLOW",
+    "Plant_Area": "7"
+  },
+  "TCV90309LO": {
+    "desc": "D901 Dryer Zone 5 Steam Valve Low Temper",
+    "Plant_Area": "9"
+  },
+  "TCV90307LLO": {
+    "desc": "D901 Dryer Zone 3 Steam Valve Low Low Te",
+    "Plant_Area": "9"
+  },
+  "L906FL": {
+    "desc": "PELLET DRYER SPREADER CONV",
+    "Plant_Area": "9"
+  },
+  "FT30260LOALM": {
+    "desc": "F31 ADDITIONAL WASH 2ND BANK LOW FLOW",
+    "Plant_Area": "3"
+  },
+  "FT30259LOALM": {
+    "desc": "F30 ADDITIONAL WASH 1ST BANK LOW FLOW",
+    "Plant_Area": "3"
+  },
+  "FT30257": {
+    "desc": "F27 WATER WASH 2ND BANK",
+    "Plant_Area": "3"
+  },
+  "FT30256": {
+    "desc": "F26 WATER WASH 1ST BANK",
+    "Plant_Area": "3"
+  },
+  "FT30226FL": {
+    "desc": "F08  WATER TO PRAYON",
+    "Plant_Area": "3"
+  },
+  "FT30105": {
+    "desc": "F10 ML TO DIGESTER",
+    "Plant_Area": "3"
+  },
+  "V30240FL": {
+    "desc": "PRAYON ADDITIONAL WASH CAUSTIC",
+    "Plant_Area": "3"
+  },
+  "LCV30240HIHI": {
+    "desc": "PRAYN ADDN WASH HIHI LEV",
+    "Plant_Area": "3"
+  },
+  "TCV90309LLO": {
+    "desc": "D901 Dryer Zone 5 Steam Valve Low Low Te",
+    "Plant_Area": "9"
+  },
+  "L501FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "5"
+  },
+  "2GASEFFAL": {
+    "desc": "GAS EFFLUENT ALARM",
+    "Plant_Area": "6"
+  },
+  "V90508FL": {
+    "desc": "SERV EMRG TW TO V903 CLOSE",
+    "Plant_Area": "9"
+  },
+  "L208FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "2"
+  },
+  "L208RFL": {
+    "desc": "L208 ROCON FAILED",
+    "Plant_Area": "2"
+  },
+  "PT30201LO": {
+    "desc": "V302 WASH FILTER SUCTION COND PRESS LOW",
+    "Plant_Area": "3"
+  },
+  "FT70106FL": {
+    "desc": "F11 PHOS ACID TO TK706",
+    "Plant_Area": "7"
+  },
+  "PHT70202BD": {
+    "desc": "PH01 PROBE B DEVIATION ALARM",
+    "Plant_Area": "7"
+  },
+  "TCV90305HAL": {
+    "desc": "D901 Dryer Zone 1 Steam Valve High Tempe",
+    "Plant_Area": "9"
+  },
+  "TCV90307HAL": {
+    "desc": "D901 Dryer Zone 3 Steam Valve High Tempe",
+    "Plant_Area": "9"
+  },
+  "M301SPEVNT": {
+    "desc": "M301 STOPPED - L301 & P304 OFF FOR 5 MIN",
+    "Plant_Area": "3"
+  },
+  "2LT70119HIAL": {
+    "desc": "BUFFER TANK TK706 HIGH LEVEL",
+    "Plant_Area": "7"
+  },
+  "V60207FL": {
+    "desc": "DRY EMRG TW TO J603 CLOSE",
+    "Plant_Area": "6"
+  },
+  "CP4_CP2_COMMS_FAILED": {
+    "desc": "COMMUNICATION BETWEEN CP4/CP2 PLC'S FAIL",
+    "Plant_Area": "0"
+  },
+  "CP3_CP2_COMMS_FAILED": {
+    "desc": "COMMUNICATION BETWEEN CP3/CP2 PLC'S FAIL",
+    "Plant_Area": "0"
+  },
+  "F707IN6": {
+    "desc": "F707 SPIN FILTER FAULT",
+    "Plant_Area": "7"
+  },
+  "TT70712FL": {
+    "desc": "T30 E707 TEMP TRANSMITTER FAILURE",
+    "Plant_Area": "7"
+  },
+  "TT70713FL": {
+    "desc": "T31 E707 TEMP TRANSMITTER FAILURE",
+    "Plant_Area": "7"
+  },
+  "2LSH30274AL": {
+    "desc": "HIGH LEVEL IN PRAYN SUMP",
+    "Plant_Area": "3"
+  },
+  "2LSLL80213AL": {
+    "desc": "TK804 TOWNS WATER TANK LOW LOW LEVEL",
+    "Plant_Area": "8"
+  },
+  "2LT70350LOAL": {
+    "desc": "PHOS ACID TK712 LOW LEVEL",
+    "Plant_Area": "7"
+  },
+  "2MT80532HIAL": {
+    "desc": "PLANT AIR SUPPLY HIGH AIR MOIS",
+    "Plant_Area": "8"
+  },
+  "PT80331FL": {
+    "desc": "P02 BOILER STEAM PRESSURE",
+    "Plant_Area": "8"
+  },
+  "WT20209": {
+    "desc": "W01 WOOD TO KILN A",
+    "Plant_Area": "2"
+  },
+  "WT20309": {
+    "desc": "W02 WOOD TO KILN B",
+    "Plant_Area": "2"
+  },
+  "WT20409": {
+    "desc": "W03 WOOD TO KILN C",
+    "Plant_Area": "2"
+  },
+  "V30241FL": {
+    "desc": "TK309 WATER ISOLATION VALVE FAIL",
+    "Plant_Area": "3"
+  },
+  "2TT20221LOAL": {
+    "desc": "CARBON TEMP KILN A T01 LOW",
+    "Plant_Area": "2"
+  },
+  "2TT20321LOAL": {
+    "desc": "CARBON TEMP KILN B T02 LOW",
+    "Plant_Area": "2"
+  },
+  "2WT20209LOAL": {
+    "desc": "WOOD FLOW TO KILN A W01 LOW",
+    "Plant_Area": "2"
+  },
+  "2WT20309LOAL": {
+    "desc": "WOOD FLOW TO KILN B W02 LOW",
+    "Plant_Area": "2"
+  },
+  "2WT20409LOAL": {
+    "desc": "WOOD FLOW TO KLN C W03 LOW",
+    "Plant_Area": "2"
+  },
+  "KILNBAIRAL": {
+    "desc": "KILN B COMB AIR NOT HEALTHY",
+    "Plant_Area": "2"
+  },
+  "V70355FL": {
+    "desc": "ACID TK711 RECYCLE VALVE",
+    "Plant_Area": "7"
+  },
+  "V90510FL": {
+    "desc": "SERV EMRG TW TO KILN TK904",
+    "Plant_Area": "9"
+  },
+  "2DT70114LOAL": {
+    "desc": "SUPPLY TANK DENSITY LOW",
+    "Plant_Area": "7"
+  },
+  "F301FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "3"
+  },
+  "FT60107LOAL": {
+    "desc": "KILN A VENTURI FLOW LOW",
+    "Plant_Area": "6"
+  },
+  "FT60108LOAL": {
+    "desc": "KILN B VENTURI FLOW LOW",
+    "Plant_Area": "6"
+  },
+  "FT30255FL": {
+    "desc": "F25 WATER TO 4TH WASH",
+    "Plant_Area": "3"
+  },
+  "FSL60107ILAL": {
+    "desc": "Kiln A Intrlkd Stpd on Lo J601A Wtr Flow",
+    "Plant_Area": "6"
+  },
+  "FSL60108ILAL": {
+    "desc": "Kiln B Intrlkd Stpd on Lo J601B Wtr Flow",
+    "Plant_Area": "6"
+  },
+  "2TK709EFAL": {
+    "desc": "TK709 EXTENDED FILL    STOPPED",
+    "Plant_Area": "7"
+  },
+  "V90514AF": {
+    "desc": "SERV RW TO ELCD SCRUB OPEN",
+    "Plant_Area": "9"
+  },
+  "V90514FL": {
+    "desc": "SERV RW TO ELCD SCRUB OPEN",
+    "Plant_Area": "9"
+  },
+  "TT20351FL": {
+    "desc": "T18 KILN B BACK BOX",
+    "Plant_Area": "2"
+  },
+  "TCV90306LO": {
+    "desc": "D901 Dryer Zone 2 Steam Valve Low Temper",
+    "Plant_Area": "9"
+  },
+  "TCV90305LLO": {
+    "desc": "D901 Dryer Zone 1 Steam Valve Low Low Te",
+    "Plant_Area": "9"
+  },
+  "TCV90306LLO": {
+    "desc": "D901 Dryer Zone 2 Steam Valve Low LowTem",
+    "Plant_Area": "9"
+  },
+  "290504DEVAL": {
+    "desc": "RIVER WATER F24 DEV",
+    "Plant_Area": "6"
+  },
+  "V90514SF": {
+    "desc": "V90514 SWITCH FAILURE",
+    "Plant_Area": "9"
+  },
+  "2LSH40230AL": {
+    "desc": "D401 DISCHARGE HOPPER HI LEVEL",
+    "Plant_Area": "4"
+  },
+  "F301NOCOMMS": {
+    "desc": "F301 PROFIBUS COMMS",
+    "Plant_Area": "3"
+  },
+  "M105BNOCOMMS": {
+    "desc": "M105B PROFIBUS COMMS",
+    "Plant_Area": "1"
+  },
+  "A518FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "5"
+  },
+  "ST90304FL": {
+    "desc": "D901 DRYER CONVEYOR SPEED",
+    "Plant_Area": "9"
+  },
+  "L508FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "5"
+  },
+  "L508RFL": {
+    "desc": "GRAN DRYER BUCKET CONVEYOR",
+    "Plant_Area": "5"
+  },
+  "2LSL90510AL": {
+    "desc": "RW BUFFER TANK TK904 LOW LEVEL",
+    "Plant_Area": "9"
+  },
+  "2LSLL90510AL": {
+    "desc": "RW TK904 LOW LOW LEVEL",
+    "Plant_Area": "9"
+  },
+  "TCV30241HI": {
+    "desc": "PRAY ADDN WASH HI TEMP",
+    "Plant_Area": "3"
+  },
+  "TCV30241HIHI": {
+    "desc": "PRAY ADDN WASH HIHI TEMP",
+    "Plant_Area": "3"
+  },
+  "TT70203FL": {
+    "desc": "T07 EFFLUENT TO SEWER",
+    "Plant_Area": "7"
+  },
+  "M105ATRQ": {
+    "desc": "M105A TORQUE FROM PROFIBUS",
+    "Plant_Area": "1"
+  },
+  "L112FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "1"
+  },
+  "2LSH70400AL": {
+    "desc": "STORM DRAIN HIGH LEVEL",
+    "Plant_Area": "7"
+  },
+  "V601LSPRAY": {
+    "desc": "V601 LOWER WATER SPRAY FAILED",
+    "Plant_Area": "6"
+  },
+  "V80548FL": {
+    "desc": "TK-806 RIVER WATER FEED VALVE",
+    "Plant_Area": "8"
+  },
+  "M301FL": {
+    "desc": "PRAYN DIGESTER AGITATOR",
+    "Plant_Area": "3"
+  },
+  "2F06HIOPAL": {
+    "desc": "PHOS ACID TO KILN C F06 HI OUT",
+    "Plant_Area": "2"
+  },
+  "2F04HIOPAL": {
+    "desc": "PHOS ACID TO KILN A F04 HI OUT",
+    "Plant_Area": "2"
+  },
+  "2KILNBOUTAL": {
+    "desc": "KILN B FLAME OUT",
+    "Plant_Area": "2"
+  },
+  "2KILNAOUTAL": {
+    "desc": "KILN A FLAME OUT",
+    "Plant_Area": "2"
+  },
+  "OAR069_DISP": {
+    "desc": "KILN B FLAME ON.",
+    "Plant_Area": "2"
+  },
+  "2PSL80505AL": {
+    "desc": "SUPPLY AIR LOW PRESSURE",
+    "Plant_Area": "8"
+  },
+  "OAR068_DISP": {
+    "desc": "KILN A FLAME ON.",
+    "Plant_Area": "2"
+  },
+  "2WT20309HIAL": {
+    "desc": "WOOD FLOW TO KILN B W02 HIGH",
+    "Plant_Area": "2"
+  },
+  "2WT20209HIAL": {
+    "desc": "WOOD FLOW TO KILN A W01 HIGH",
+    "Plant_Area": "2"
+  },
+  "2FT20222HIAL": {
+    "desc": "NATURAL GAS TO KILN A F01 HIGH",
+    "Plant_Area": "2"
+  },
+  "P714B_FLT": {
+    "desc": "EFFLUENT TRANSFER PUMP P-714B FAULT",
+    "Plant_Area": "7"
+  },
+  "A212FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "2"
+  },
+  "2XL80317AL": {
+    "desc": "MAIN BOILER FAULT",
+    "Plant_Area": "8"
+  },
+  "PSL50212AL": {
+    "desc": "F503 K503 LOW SUCTION",
+    "Plant_Area": "5"
+  },
+  "PT50363_LO": {
+    "desc": "F504 DUST EXTRACTION PRESS LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "PT50363_LOLO": {
+    "desc": "F504 DUST EXTRACTION PRESS LOW LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "L501RFL": {
+    "desc": "L501 ROCON FAILED",
+    "Plant_Area": "5"
+  },
+  "2ACIDSYSAL": {
+    "desc": "ACID SYSTEM ALARM",
+    "Plant_Area": "7"
+  },
+  "P303FL": {
+    "desc": "ACID ML PUMP",
+    "Plant_Area": "3"
+  },
+  "2LSL60301AL": {
+    "desc": "V603 LOW LEVEL",
+    "Plant_Area": "6"
+  },
+  "2TT70713HIAL": {
+    "desc": "T31 E707 DISCHARGE HIGH TEMP",
+    "Plant_Area": "7"
+  },
+  "L513FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "5"
+  },
+  "T903LFAULT": {
+    "desc": "T903 LEVEL FAULT",
+    "Plant_Area": "9"
+  },
+  "TT90422HI": {
+    "desc": "BAND DRYER DISCHARGE TEMP HIGH",
+    "Plant_Area": "9"
+  },
+  "A903DFL": {
+    "desc": "A903D GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "P309FL": {
+    "desc": "PRAYN ADDITIONAL WASH PUMP",
+    "Plant_Area": "3"
+  },
+  "4EMB_P703FLT": {
+    "desc": "Mix Cycle fault: P703 off",
+    "Plant_Area": "7"
+  },
+  "LCV30240LO": {
+    "desc": "PRAYN ADDN WASH LO LEV",
+    "Plant_Area": "3"
+  },
+  "FAULT_M111A": {
+    "desc": "FAULT DETECTED ON M-111A",
+    "Plant_Area": "1"
+  },
+  "FAULT_M111B": {
+    "desc": "FAULT DETECTED ON M-111B",
+    "Plant_Area": "1"
+  },
+  "V601USPRAY": {
+    "desc": "V601 UPPER WATER SPRAY FAILED",
+    "Plant_Area": "6"
+  },
+  "A_LOOSEALM": {
+    "desc": "MFB A PLUG HANGING LOOSE",
+    "Plant_Area": "0"
+  },
+  "V90410FL": {
+    "desc": "T903 OUTLET VALVE",
+    "Plant_Area": "9"
+  },
+  "V70354FL": {
+    "desc": "ACID TANKER FILLING VALVE",
+    "Plant_Area": "7"
+  },
+  "FT20210FL": {
+    "desc": "F04 PHOS ACID TO KILN A",
+    "Plant_Area": "2"
+  },
+  "L303FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "3"
+  },
+  "L303RFL": {
+    "desc": "L303 ROCON FAILED",
+    "Plant_Area": "3"
+  },
+  "DPIT10262IN": {
+    "desc": "OS Mill Filter Diff Pressure",
+    "Plant_Area": "1"
+  },
+  "FAULT_K105": {
+    "desc": "FAULT DETECTED ON K-105",
+    "Plant_Area": "1"
+  },
+  "A904DFL": {
+    "desc": "A904D GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "ZS90251": {
+    "desc": "A903 SIDE DOOR OPEN",
+    "Plant_Area": "9"
+  },
+  "A904CFL": {
+    "desc": "A904C GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "A904AFL": {
+    "desc": "A904A DELTA/GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "A904ASTFL": {
+    "desc": "A904A STAR FAILURE",
+    "Plant_Area": "9"
+  },
+  "A904BFL": {
+    "desc": "A904B DELTA/GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "A904BSTFL": {
+    "desc": "A904B STAR FAILURE",
+    "Plant_Area": "9"
+  },
+  "A903AFL": {
+    "desc": "A903A DELTA/GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "A903BFL": {
+    "desc": "A903B DELTA/GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "A903CFL": {
+    "desc": "A903C GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "2LT30214LOAL": {
+    "desc": "1ST WASH TANK LOW LEVEL",
+    "Plant_Area": "3"
+  },
+  "HSA90102": {
+    "desc": "Discharge Requested by OSF Tnkr Driver",
+    "Plant_Area": "9"
+  },
+  "LCV30240LOLO": {
+    "desc": "PRAYN ADDN WASH LOLO LEV",
+    "Plant_Area": "3"
+  },
+  "PT90227": {
+    "desc": "V901 MIXER PRESSURE P99",
+    "Plant_Area": "9"
+  },
+  "PAH90227": {
+    "desc": "Mixer High Pressure alarm",
+    "Plant_Area": "9"
+  },
+  "LSLL90764": {
+    "desc": "V918 LOW LOW LEVEL",
+    "Plant_Area": "9"
+  },
+  "2TC40202HIAL": {
+    "desc": "DRYER OUTLET TEMP T06 HIGH",
+    "Plant_Area": "4"
+  },
+  "LSHH90803AL": {
+    "desc": "L908 TK906 HIGH HIGH LEVEL",
+    "Plant_Area": "9"
+  },
+  "L502FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "5"
+  },
+  "L502RFL": {
+    "desc": "TK504 LAC ELEVATOR ROCON",
+    "Plant_Area": "5"
+  },
+  "4ET4_EXCONV": {
+    "desc": "T904 Extended Conveying time",
+    "Plant_Area": "9"
+  },
+  "T904LFAULT": {
+    "desc": "T904 LEVEL FAULT",
+    "Plant_Area": "9"
+  },
+  "TT90422": {
+    "desc": "D901 DRYER DISCHARGE TEMP",
+    "Plant_Area": "9"
+  },
+  "FAH71309_ALM": {
+    "desc": "EFFLUENT CAUSTIC DOSING HIGH FLOW",
+    "Plant_Area": "7"
+  },
+  "PSL30258AL": {
+    "desc": "F301 LOW SUCTION PRESSURE ALARM",
+    "Plant_Area": "3"
+  },
+  "WIR_PT22": {
+    "desc": "WEIGHT IN TK103 4 - 20 mA",
+    "Plant_Area": "1"
+  },
+  "2PT80205LOAL": {
+    "desc": "RIVER WATER LOW PRESSURE",
+    "Plant_Area": "8"
+  },
+  "2TT60120HIAL": {
+    "desc": "KILN GAS SCRUB TEMP T09 HIGH",
+    "Plant_Area": "6"
+  },
+  "P803AFL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "8"
+  },
+  "LSH10155AL": {
+    "desc": "L112 ELEVATOR HIGH LEVEL",
+    "Plant_Area": "1"
+  },
+  "P603BFL": {
+    "desc": "DRY DRYER VENTURI PUMP B",
+    "Plant_Area": "6"
+  },
+  "4TRP_TR04": {
+    "desc": "TRIP 4",
+    "Plant_Area": "0"
+  },
+  "V90421FL": {
+    "desc": "T904 VENT VALVE",
+    "Plant_Area": "9"
+  },
+  "FT70702FL": {
+    "desc": "F34 COOLING SYSTEM FLOWMETER FAILURE",
+    "Plant_Area": "7"
+  },
+  "V90214FL": {
+    "desc": "V901 ACID TO MIXER VALVE",
+    "Plant_Area": "9"
+  },
+  "V90222FL": {
+    "desc": "V901 ACID ROUTING VALVE",
+    "Plant_Area": "9"
+  },
+  "DT70114FL": {
+    "desc": "D01 SUPPLY TANK DENSITY",
+    "Plant_Area": "7"
+  },
+  "TT70114FL": {
+    "desc": "SUPPLY ACID DENISTY METER TEMP TRANSMITT",
+    "Plant_Area": "7"
+  },
+  "V90407FL": {
+    "desc": "T903 INNER INLET VALVE",
+    "Plant_Area": "9"
+  },
+  "V90408FL": {
+    "desc": "T903 OUTER INLET VALVE",
+    "Plant_Area": "9"
+  },
+  "P805FL": {
+    "desc": "PRAYN RW BOOSTER PUMP",
+    "Plant_Area": "8"
+  },
+  "2TSH30108AL": {
+    "desc": "DIGESTER VENTURI HIGH TEMP",
+    "Plant_Area": "3"
+  },
+  "V50353FL": {
+    "desc": "V503A BIN A OUTLET VALVE",
+    "Plant_Area": "5"
+  },
+  "M105ARFL": {
+    "desc": "M105A ROCON FAILED",
+    "Plant_Area": "1"
+  },
+  "V50822FL": {
+    "desc": "T510 OUTLET VALVE",
+    "Plant_Area": "5"
+  },
+  "LSH10118AL": {
+    "desc": "WODSILO TK101A HIGH LEVEL",
+    "Plant_Area": "1"
+  },
+  "2MT20120LOAL": {
+    "desc": "M01 WOOD MOISTURE LOW",
+    "Plant_Area": "2"
+  },
+  "A201BSFLTCH": {
+    "desc": "A201B HAS BEEN STOPPED",
+    "Plant_Area": "2"
+  },
+  "2FT20322HIAL": {
+    "desc": "NATURAL GAS TO KILN B F02 HIGH",
+    "Plant_Area": "2"
+  },
+  "3U008ALM01": {
+    "desc": "PRESSURE BEFORE MILL HIGH",
+    "Plant_Area": "0"
+  },
+  "EMIX_WFMT": {
+    "desc": "MIX CYCLE STOPPED AS WOOD FLOUR NOT AVAI",
+    "Plant_Area": "9"
+  },
+  "2LSH30208AL": {
+    "desc": "ML TANK HIGH HIGH LEVEL",
+    "Plant_Area": "3"
+  },
+  "K914FL": {
+    "desc": "K914 CONVEYOR SCRUBBER FAN",
+    "Plant_Area": "9"
+  },
+  "V90725FL": {
+    "desc": "T901 ORIFICE VALVE",
+    "Plant_Area": "9"
+  },
+  "L915FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "V90721FL": {
+    "desc": "T901 INNER INLET VALVE",
+    "Plant_Area": "9"
+  },
+  "K913FL": {
+    "desc": "PELLET SCRUBBER FAN",
+    "Plant_Area": "9"
+  },
+  "V90407IFL": {
+    "desc": "T903 INFLATE INNER SEAL",
+    "Plant_Area": "9"
+  },
+  "K909FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "9"
+  },
+  "K909SFL": {
+    "desc": "K909 SPEED FAULT",
+    "Plant_Area": "9"
+  },
+  "V90417IFL": {
+    "desc": "T904 INFLATE INNER SEAL",
+    "Plant_Area": "9"
+  },
+  "V90417FL": {
+    "desc": "T904 INNER INLET VALVE",
+    "Plant_Area": "9"
+  },
+  "ZS90285": {
+    "desc": "RUPTURE DISK SENSOR",
+    "Plant_Area": "9"
+  },
+  "ZS90767": {
+    "desc": "L915 CHOKE SWITCH",
+    "Plant_Area": "9"
+  },
+  "ZS90768": {
+    "desc": "F905 FLAMELESS VENT",
+    "Plant_Area": "9"
+  },
+  "V90760FL": {
+    "desc": "V918 VENT VALVE",
+    "Plant_Area": "9"
+  },
+  "4TRP_TR19": {
+    "desc": "TRIP 19",
+    "Plant_Area": "0"
+  },
+  "KILNAAIRAL": {
+    "desc": "KILN A COMB AIR NOT HEALTHY",
+    "Plant_Area": "2"
+  },
+  "2LSL20103AL": {
+    "desc": "DAY SILO LOW LEVEL",
+    "Plant_Area": "2"
+  },
+  "PT90761": {
+    "desc": "V918 Pressure Transmitter",
+    "Plant_Area": "9"
+  },
+  "IT90279FL": {
+    "desc": "MIXER MOTOR SIG FL",
+    "Plant_Area": "9"
+  },
+  "TT90281FL": {
+    "desc": "MIXER TEMP SIG FL",
+    "Plant_Area": "9"
+  },
+  "M509RFL": {
+    "desc": "MILFEED HOPPER RV ROCON",
+    "Plant_Area": "5"
+  },
+  "A201CSFLTCH": {
+    "desc": "A201C HAS BEEN STOPPED",
+    "Plant_Area": "2"
+  },
+  "2F05DEVAL": {
+    "desc": "PHOS ACID TO KILN B F05 DEV",
+    "Plant_Area": "2"
+  },
+  "2F06LOAL": {
+    "desc": "PHOS ACID TO KILN C F06 LOW",
+    "Plant_Area": "2"
+  },
+  "LT70129FL": {
+    "desc": "L06 CAUSTIC TK704",
+    "Plant_Area": "7"
+  },
+  "2LT70102HIAL": {
+    "desc": "PHOS ACID TK701 HIGH LEVEL",
+    "Plant_Area": "7"
+  },
+  "D201BFL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "2"
+  },
+  "WT20309FL": {
+    "desc": "W02 WOOD TO KILN B",
+    "Plant_Area": "2"
+  },
+  "ZS90254": {
+    "desc": "A903 SHEAR PIN FAULT",
+    "Plant_Area": "9"
+  },
+  "DV505FL": {
+    "desc": "DV505 T510/11 TO TK508A/B",
+    "Plant_Area": "5"
+  },
+  "DV505SF": {
+    "desc": "SW FAIL DV505 T510/11 TO TK508 A/B",
+    "Plant_Area": "5"
+  },
+  "DV505IFL": {
+    "desc": "DV505 SEAL INFLATE",
+    "Plant_Area": "5"
+  },
+  "PT50831FL": {
+    "desc": "T510 PRESSURE",
+    "Plant_Area": "5"
+  },
+  "V90410IFL": {
+    "desc": "T903 INFLATE OUTLET SEAL",
+    "Plant_Area": "9"
+  },
+  "TT90314": {
+    "desc": "D901 DRYER EXHAUST TEMP",
+    "Plant_Area": "9"
+  },
+  "A213FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "2"
+  },
+  "TIT10239_IN": {
+    "desc": "OS MILL SUCTION AIR TEMP",
+    "Plant_Area": "1"
+  },
+  "P716B_FLT": {
+    "desc": "EFFLUENT DISCHARGE PUMP P-716B FAULT",
+    "Plant_Area": "7"
+  },
+  "P716A_FLT": {
+    "desc": "EFFLUENT DISCHARGE PUMP P-716A FAULT",
+    "Plant_Area": "7"
+  },
+  "FT60213FL": {
+    "desc": "F17 DRY EX GAS TO STACK",
+    "Plant_Area": "6"
+  },
+  "V50842FL": {
+    "desc": "T511 OUTLET VALVE",
+    "Plant_Area": "5"
+  },
+  "LSH10132AL": {
+    "desc": "A101 F101 HIGH LEVEL",
+    "Plant_Area": "1"
+  },
+  "PT50280_LO": {
+    "desc": "CARMILL AFTER CYCLONE P54 LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "PT50280_LOLO": {
+    "desc": "CARMILL AFTER CYCLONE P54 LOW LOW ALARM",
+    "Plant_Area": "5"
+  },
+  "A504FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "5"
+  },
+  "A504SFL": {
+    "desc": "CARMILL SPEED CONTROL FAULT",
+    "Plant_Area": "5"
+  },
+  "V50820FL": {
+    "desc": "T510 OUTER INLET VALVE",
+    "Plant_Area": "5"
+  },
+  "V50821FL": {
+    "desc": "T510 INNER INLET VALVE",
+    "Plant_Area": "5"
+  },
+  "3U058ALM01": {
+    "desc": "L504 IS NOT RUNNING",
+    "Plant_Area": "5"
+  },
+  "K506FL": {
+    "desc": "BAG SPLITTER BLOWER",
+    "Plant_Area": "5"
+  },
+  "2LY03LOAL": {
+    "desc": "ML TANK LOW LEVEL",
+    "Plant_Area": "3"
+  },
+  "D201BRFL": {
+    "desc": "D201B ROCON FAILED",
+    "Plant_Area": "2"
+  },
+  "V50360FL": {
+    "desc": "V503B BIN B OUTLET VALVE",
+    "Plant_Area": "5"
+  },
+  "P901_NOSWING": {
+    "desc": "PELLETISER SPREADER NO SWING",
+    "Plant_Area": "9"
+  },
+  "P901FL": {
+    "desc": "PELLET DRYER SPREADER PUMP",
+    "Plant_Area": "9"
+  },
+  "P710FL": {
+    "desc": "ACID ACID TNKER LOADING PUMP",
+    "Plant_Area": "7"
+  },
+  "LT80545": {
+    "desc": "TK804 TOWNS WATER TANK LEVEL READING",
+    "Plant_Area": "8"
+  },
+  "D901SFL": {
+    "desc": "D901 SPEED CONTROL FAULT",
+    "Plant_Area": "9"
+  },
+  "V90416FL": {
+    "desc": "T904 OUTER INLET VALVE",
+    "Plant_Area": "9"
+  },
+  "V90420IFL": {
+    "desc": "T904 INFLATE OUTLET SEAL",
+    "Plant_Area": "9"
+  },
+  "L905FL": {
+    "desc": "GENERAL FAILURE",
+    "Plant_Area": "9"
+  }
+}

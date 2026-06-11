@@ -1,0 +1,33 @@
+/* Center images and add a light blue border */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #b3e0f2; /* Light blue border */
+    border-radius: 5px;
+    max-width: 90%; /* Ensure images don't exceed their container */
+}
+div {
+    text-align: center;
+}
+/* Center tables */
+table {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse; /* Collapse table borders */
+    text-align: center;
+}
+
+/* Style table cells */
+td, th {
+    border: 1px solid #dddddd; /* Light gray border */
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style table header */
+th {
+    background-color: #f2f2f2; /* Light gray background for header */
+}

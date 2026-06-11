@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>flow_chart.html</title>
+        <style type="text/css">
+          .end-element { fill : #FFCCFF; }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.17.1/flowchart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="../release/flowchart.min.js"></script> -->
+        <script>
+
+            window.onload = function () {
+                var btn = document.getElementById("run"),
+                    cd = document.getElementById("code"),
+                    chart;
+                    
+                (btn.onclick = function () {
+                    var code = cd.value;
+
+                    if (chart) {
+                      chart.clean();
+                    }
+
+                    chart = flowchart.parse(code);
+                    chart.drawSVG('canvas', {
+                      'x': 0,
+                      'y': 0,
+                      'line-width': 3,
+                      //'maxWidth': 15,//ensures the flowcharts fits within a certain width
+                      'line-length': 50,
+                      'text-margin': 10,
+                      'font-size': 14,
+                      'font': 'normal',
+                      'font-family': 'Helvetica',
+                      'font-weight': 'normal',
+                      'font-color': 'black',
+                      'line-color': 'black',
+                      'element-color': 'black',
+                      'fill': 'white',
+                      'yes-text': 'yes',
+                      'no-text': 'no',
+                      'arrow-end': 'block',
+                      'scale': 1,
+                      'symbols': {
+                        'start': {
+                          'font-size': 14,
+                          'font-color': 'yellow',
+                          'element-color': 'blue',
+                          'fill': 'green',
+                          'class': 'start-element'
+                        },
+                        'inputoutput': {
+                          'font-color': 'black',
+                          'element-color': 'black',
+                          'fill': 'bisque'
+                        },
+                        'operation': {
+                          'font-color': 'black',
+                          'element-color': 'black',
+                          'fill': 'linen'
+                        },
+                        'subroutine': {
+                          'font-color': 'black',
+                          'element-color': 'blue',
+                          'fill': 'lightgreen'
+                        },
+                        'condition': {
+                          'font-color': 'red',
+                          'element-color': 'black',
+                          'fill': 'yellow'
+                        },
+                        'end':{
+                          'font-size': 20,
+                          'class': 'end-element'
+                        }
+                      },
+                      'flowstate' : {
+                        //'past' : { 'fill' : '#CCCCCC', 'font-size' : 12},
+                        //'current' : {'fill' : 'yellow', 'font-color' : 'red', 'font-weight' : 'bold'},
+                        //'future' : { 'fill' : '#FFFF99'},
+                        'request' : { 'fill' : 'blue'},
+                        'invalid': {'fill' : '#444444'},
+                        'approved' : { 'fill' : '#58C4A3', 'font-size' : 12, 'yes-text' : 'APPROVED', 'no-text' : 'n/a' },
+                        'rejected' : { 'fill' : '#C45879', 'font-size' : 12, 'yes-text' : 'n/a', 'no-text' : 'REJECTED' }
+                      }
+                    });
+                    //create base64 encoding of SVG to generate download link for title(without html or htm).SVG
+                    var currentCanvasDIV = document.getElementById('canvas')
+                    var currentDrawSVG = currentCanvasDIV.innerHTML.replaceAll('ë','e');
+
+                    const OUTsvgBASE64 = btoa(currentDrawSVG)
+                    doctitle = document.title.replace('.html','');
+                    doctitle = doctitle.replace('.htm','');
+
+
+                    var currentCanvasDIV = document.getElementById('canvas')
+                    var currentDrawSVG = currentCanvasDIV.innerHTML.replaceAll('ë','e');
+                    svgSource = currentDrawSVG
+                    svgXML = currentDrawSVG;
+                    // Use SVG Height and Width from the SVG XML to set canvas size
+                    svgXMLsubstringHeight = svgXML.substring(svgXML.indexOf('height='), svgXML.indexOf('version='));
+                    svgXMLsubstringWidth = svgXML.substring(svgXML.indexOf('width='), svgXML.indexOf('xmlns='));
+                    HeightValue = svgXMLsubstringHeight.substring(svgXMLsubstringHeight.indexOf('"')+1,svgXMLsubstringHeight.lastIndexOf('"'));
+                    WidthValue = svgXMLsubstringWidth.substring(svgXMLsubstringWidth.indexOf('"')+1,svgXMLsubstringWidth.lastIndexOf('"'));
+                    HeightValueInt = Math.round(HeightValue)
+                    WidthValueInt = Math.round(WidthValue)
+                    // setup input for base64SvgToBase64Png
+                    let svgSrc = "data:image/svg+xml;base64,"+OUTsvgBASE64;
+                    var pngBase
+                    imageUtil.base64SvgToBase64Png(svgSrc, WidthValueInt, HeightValueInt).then(pngSrc => {
+                    pngBase = pngSrc
+                    // output download link for base64 PNG converted on download from base64
+                    var pngOutHtml = `<a href="${pngBase}" download="${doctitle}.png">PNG - Click here to download current rendered flowchart as ${doctitle}.png</a>`
+                    document.getElementById("pngbase64").innerHTML=pngOutHtml;
+                    });    
+                    // output download link for base64 SVG converted on download from base64
+                    var svgOutHtml = `<a href="data:image/svg+xml;base64,${OUTsvgBASE64}" download=${doctitle}.svg>SVG - Click here to download current rendered flowchart as ${doctitle}.svg</a> `
+                        document.getElementById("svgbase64").innerHTML=svgOutHtml;
+                    })();
+
+                            };
+                 
+
+// derived from https://stackoverflow.com/a/64800570
+// we need to use web browser canvas to generate a image. In this case png
+let imageUtil = {};
+/**
+ * converts a base64 encoded data url SVG image to a PNG image
+ * @param originalBase64 data url of svg image
+ * @param width target width in pixel of PNG image
+ * @param secondTry used internally to prevent endless recursion
+ * @return {Promise<unknown>} resolves to png data url of the image
+ */
+imageUtil.base64SvgToBase64Png = function (originalBase64, width, height, secondTry) {
+    return new Promise(resolve => {
+        let img = document.createElement('img');
+        img.onload = function () {
+            if (!secondTry && (img.naturalWidth === 0 || img.naturalHeight === 0)) {
+                let svgDoc = base64ToSvgDocument(originalBase64);
+                let fixedDoc = fixSvgDocumentFF(svgDoc);
+                return imageUtil.base64SvgToBase64Png(svgDocumentToBase64(fixedDoc), width, height, true).then(result => {
+                    resolve(result);
+                });
+            }
+            //document.body.appendChild(img);
+            let canvas2 = document.createElement("canvas");
+            //document.body.removeChild(img);
+            canvas2.width = width;
+            canvas2.height = height;
+            let ctx = canvas2.getContext("2d");
+            ctx.drawImage(img, 0, 0, canvas2.width, canvas2.height);
+            try {
+                let data = canvas2.toDataURL('image/png');
+                resolve(data);
+            } catch (e) {
+                resolve(null);
+            }
+        };
+        img.src = originalBase64;
+    });
+}
+
+//needed because Firefox doesn't correctly handle SVG with size = 0, see https://bugzilla.mozilla.org/show_bug.cgi?id=700533
+function fixSvgDocumentFF(svgDocument) {
+    try {
+        let widthInt = parseInt(svgDocument.documentElement.width.baseVal.value) || 500;
+        let heightInt = parseInt(svgDocument.documentElement.height.baseVal.value) || 500;
+        svgDocument.documentElement.width.baseVal.newValueSpecifiedUnits(SVGLength.SVG_LENGTHTYPE_PX, widthInt);
+        svgDocument.documentElement.height.baseVal.newValueSpecifiedUnits(SVGLength.SVG_LENGTHTYPE_PX, heightInt);
+        return svgDocument;
+    } catch (e) {
+        return svgDocument;
+    }
+}
+
+function svgDocumentToBase64(svgDocument) {
+    try {
+        let base64EncodedSVG = btoa(new XMLSerializer().serializeToString(svgDocument));
+        return 'data:image/svg+xml;base64,' + base64EncodedSVG;
+    } catch (e) {
+        return null;
+    }
+}
+
+function base64ToSvgDocument(base64) {
+    let svg = atob(base64.substring(base64.indexOf('base64,') + 7));
+    svg = svg.substring(svg.indexOf('<svg'));
+    let parser = new DOMParser();
+    return parser.parseFromString(svg, "image/svg+xml");
+} 
+        </script>
+
+        <script>
+            function HelpText() {
+              var x = document.getElementById("HelpTextBlock");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+              }
+            }
+        </script>
+    </head>
+    <body>
+        <div><textarea id="code" style="width: 100%;" rows="11">op2=>operation: import pyodbc
+op4=>operation: import datetime as dt
+op6=>operation: import pandas as pd
+op8=>operation: import numpy as np
+op10=>operation: import matplotlib.pyplot as plt
+op12=>operation: import matplotlib.dates as mdates
+op14=>operation: from docx import Document
+op16=>operation: from docx.shared import Inches
+op18=>operation: from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
+op20=>operation: from io import BytesIO
+op22=>operation: class Production_day():
+
+    def __init__(self, date):
+        self.date = dt.datetime(year=date.year, month=date.month, day=date.day, hour=7, minute=0)
+        self.up_times = None
+        self.down_times = None
+        self.production_periods = None
+        self.get_times()
+        self.up_time_no = len(self.up_times)
+        self.down_time_no = len(self.down_times)
+        self.prune_uptimes()
+        self.get_production_periods()
+        self.document = None
+
+    def fetch_tag(self, tag, start=None, duration=None, end=None, resolution=5):
+        '\n        Takes a tag name, duration and end point and submits a sql query returning\n        data with 5s intervals as default for the period asked for.\n        '
+        if ((start is None) and (duration is None) and (end is None)):
+            raise ValueError('You need to provie at least 2 points of referance in time to use this function')
+        if (start is None):
+            if ((duration is None) or (end is None)):
+                raise ValueError('If you provide no start you must provide an end or duration')
+            start = (end - duration)
+        elif (duration is None):
+            if (end is None):
+                raise ValueError('If no duration is provided you must provide an end with a start')
+            duration = (start - end)
+        elif (end is None):
+            end = (start + duration)
+        con = pyodbc.connect('Driver={AspenTech SQLplus};HOST=192.168.9.47;PORT=10014')
+        end = end.strftime('%Y-%m-%d %H:%M:%S')
+        start = start.strftime('%Y-%m-%d %H:%M:%S')
+        sql = ('select "IP_TREND_TIME" as TS, "IP_TREND_VALUE" as VALUE from "%s"  where TS between TIMESTAMP\'%s\' and TIMESTAMP\'%s\'' % (tag, start, end))
+        cursor = con.cursor()
+        result = cursor.execute(sql)
+        rows = result.fetchall()
+        cols = []
+        for i in result.description:
+            cols.append(i[0])
+        data = pd.DataFrame(data=np.array(rows), columns=cols)
+        data['VALUE'] = data['VALUE'].astype(float)
+        data['VALUE'] = data['VALUE'].round(4)
+        data.name = tag
+        return data
+
+    def fetch_tag_detailed(self, tag, start=None, duration=None, end=None, resolution=5):
+        '\n        Takes a tag name, duration and end point and submits a sql query returning\n        data with 5s intervals as default for the period asked for.\n        '
+        if ((start is None) and (duration is None) and (end is None)):
+            raise ValueError('You need to provie at least 2 points of referance in time to use this function')
+        if (start is None):
+            if ((duration is None) or (end is None)):
+                raise ValueError('If you provide no start you must provide an end or duration')
+            start = (end - duration)
+        elif (duration is None):
+            if (end is None):
+                raise ValueError('If no duration is provided you must provide an end with a start')
+            duration = (start - end)
+        elif (end is None):
+            end = (start + duration)
+        con = pyodbc.connect('Driver={AspenTech SQLplus};HOST=192.168.9.47;PORT=10014')
+        end = end.strftime('%Y-%m-%d %H:%M:%S')
+        start = start.strftime('%Y-%m-%d %H:%M:%S')
+        sql = ("select TS, VALUE from HISTORY  where NAME='%s' and PERIOD=%s*10 and TS between TIMESTAMP'%s' and TIMESTAMP'%s'" % (tag, resolution, start, end))
+        cursor = con.cursor()
+        result = cursor.execute(sql)
+        rows = result.fetchall()
+        cols = []
+        for i in result.description:
+            cols.append(i[0])
+        data = pd.DataFrame(data=np.array(rows), columns=cols)
+        data['VALUE'] = data['VALUE'].astype(float)
+        data['VALUE'] = data['VALUE'].round(4)
+        data.name = tag
+        return data
+
+    def find_changes(self, df):
+        df['CHANGE'] = df['VALUE'].ne(df['VALUE'].shift())
+        result = []
+        start_index = None
+        for (i, row) in df.iterrows():
+            if ((row['CHANGE'] == 1) and (start_index is None)):
+                j = row['TS']
+                m = row['VALUE']
+                start_index = i
+            elif ((row['CHANGE'] == 1) and (start_index is not None)):
+                k = row['TS']
+                result.append([m, j, k])
+                j = row['TS']
+                m = row['VALUE']
+                start_index = i
+            elif (i == (len(df.index) - 1)):
+                k = row['TS']
+                result.append([m, j, k])
+        return result
+
+    def get_times(self):
+        kiln_C_drive_tag = 'KLN1.KLN3.UWAC.XS.01.PV'
+        drdata = self.fetch_tag_detailed(kiln_C_drive_tag, start=self.date, duration=dt.timedelta(days=1), resolution=5)
+        changes = self.find_changes(drdata)
+        str_down_times = []
+        str_up_times = []
+        for i in changes:
+            if (i[0] == 1):
+                str_up_times.append(i[1:])
+            else:
+                str_down_times.append(i[1:])
+        down_times = []
+        for i in str_down_times:
+            down_time = [dt.datetime.strptime(j, '%d-%b-%y %H:%M:%S.%f') for j in i]
+            down_times.append(down_time)
+        up_times = []
+        for i in str_up_times:
+            up_time = [dt.datetime.strptime(j, '%d-%b-%y %H:%M:%S.%f') for j in i]
+            up_times.append(up_time)
+        self.down_times = down_times
+        self.up_times = up_times
+        return
+
+    def get_production_periods(self):
+        periods = []
+        for i in self.up_times:
+            Prod = Production_period(self.date, i[0], i[1])
+            periods.append(Prod)
+        self.production_periods = periods
+        return
+
+    def prune_uptimes(self):
+        sig_periods = []
+        for i in self.up_times:
+            if (abs((i[0] - i[1]).total_seconds()) > 300):
+                sig_periods.append(i)
+        self.up_times = sig_periods
+
+    def ELCD_control(self):
+        self.document = Document()
+        sections = self.document.sections
+        for section in sections:
+            section.top_margin = Inches(0.5)
+            section.left_margin = Inches(0.5)
+            section.right_margin = Inches(0.5)
+        self.document.add_heading('{} V901 I-MR control charts,\n{} plant downtime events'.format(self.date.strftime('%Y-%m-%d'), str(self.down_time_no)), 0)
+        for (m, i) in enumerate(self.production_periods):
+            for (n, j) in enumerate(i.production_runs):
+                j.V_901_ctrl_chart()
+                if isinstance(j.V901_ctrl_figs, dict):
+                    for k in j.V901_ctrl_figs:
+                        self.document.add_picture(j.V901_ctrl_figs[k], width=Inches(7))
+                        self.document.paragraphs[(- 1)].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                    if (n < (len(i.production_runs) - 1)):
+                        self.document.add_page_break()
+            if (m < (len(self.production_periods) - 1)):
+                self.document.add_page_break()
+        self.document.save('{}_ELCD_control_charts.docx'.format(self.date.strftime('%Y-%m-%d')))
+        plt.close()
+op24=>operation: class Production_period():
+
+    def __init__(self, date, start, end):
+        self.date = date
+        self.starttime = start
+        self.endtime = end
+        self.R_recipies = None
+        self.main_recipies = None
+        self.bento_recipies = None
+        self.production_run_times = None
+        self.production_runs = None
+        self.get_recipe()
+        self.get_setpoints()
+        self.prune_production_runs()
+        self.get_runs()
+
+    def fetch_tag(self, tag, start=None, duration=None, end=None, resolution=5):
+        '\n        Takes a tag name, duration and end point and submits a sql query returning\n        data with 5s intervals as default for the period asked for.\n        '
+        if ((start is None) and (duration is None) and (end is None)):
+            raise ValueError('You need to provie at least 2 points of referance in time to use this function')
+        if (start is None):
+            if ((duration is None) or (end is None)):
+                raise ValueError('If you provide no start you must provide an end or duration')
+            start = (end - duration)
+        elif (duration is None):
+            if (end is None):
+                raise ValueError('If no duration is provided you must provide an end with a start')
+            duration = (start - end)
+        elif (end is None):
+            end = (start + duration)
+        con = pyodbc.connect('Driver={AspenTech SQLplus};HOST=192.168.9.47;PORT=10014')
+        end_str = end.strftime('%Y-%m-%d %H:%M:%S')
+        start_str = start.strftime('%Y-%m-%d %H:%M:%S')
+        sql = ('select "IP_TREND_TIME" as TS, "IP_TREND_VALUE" as VALUE from "%s"  where TS between TIMESTAMP\'%s\' and TIMESTAMP\'%s\'' % (tag, start_str, end_str))
+        cursor = con.cursor()
+        result = cursor.execute(sql)
+        rows = result.fetchall()
+        cols = []
+        for i in result.description:
+            cols.append(i[0])
+        if (len(rows) > 0):
+            data = pd.DataFrame(data=np.array(rows), columns=cols)
+            data['VALUE'] = data['VALUE'].astype(float)
+            data['VALUE'] = data['VALUE'].round(4)
+        elif (len(rows) == 0):
+            data = self.fetch_tag_detailed(tag, start=start, end=end, resolution=50)
+        data.name = tag
+        return data
+
+    def fetch_tag_detailed(self, tag, start=None, duration=None, end=None, resolution=5):
+        '\n        Takes a tag name, duration and end point and submits a sql query returning\n        data with 5s intervals as default for the period asked for.\n        '
+        if ((start is None) and (duration is None) and (end is None)):
+            raise ValueError('You need to provie at least 2 points of referance in time to use this function')
+        if (start is None):
+            if ((duration is None) or (end is None)):
+                raise ValueError('If you provide no start you must provide an end or duration')
+            start = (end - duration)
+        elif (duration is None):
+            if (end is None):
+                raise ValueError('If no duration is provided you must provide an end with a start')
+            duration = (start - end)
+        elif (end is None):
+            end = (start + duration)
+        con = pyodbc.connect('Driver={AspenTech SQLplus};HOST=192.168.9.47;PORT=10014')
+        end = end.strftime('%Y-%m-%d %H:%M:%S')
+        start = start.strftime('%Y-%m-%d %H:%M:%S')
+        sql = ("select TS, VALUE from HISTORY  where NAME='%s' and PERIOD=%s*10 and TS between TIMESTAMP'%s' and TIMESTAMP'%s'" % (tag, resolution, start, end))
+        cursor = con.cursor()
+        result = cursor.execute(sql)
+        rows = result.fetchall()
+        cols = []
+        for i in result.description:
+            cols.append(i[0])
+        data = pd.DataFrame(data=np.array(rows), columns=cols)
+        data['VALUE'] = data['VALUE'].astype(float)
+        data['VALUE'] = data['VALUE'].round(4)
+        data.name = tag
+        return data
+
+    def find_changes(self, df):
+        df['CHANGE'] = df['VALUE'].ne(df['VALUE'].shift())
+        result = []
+        start_index = None
+        for (i, row) in df.iterrows():
+            if ((row['CHANGE'] == 1) and (start_index is None)):
+                j = row['TS']
+                m = row['VALUE']
+                start_index = i
+            elif ((row['CHANGE'] == 1) and (start_index is not None)):
+                k = row['TS']
+                result.append([m, j, k])
+                j = row['TS']
+                m = row['VALUE']
+                start_index = i
+            elif (i == (len(df.index) - 1)):
+                k = row['TS']
+                result.append([m, j, k])
+        return result
+
+    def get_times(self):
+        kiln_C_drive_tag = 'KLN1.KLN3.UWAC.XS.01.PV'
+        drdata = self.fetch_tag_detailed(kiln_C_drive_tag, start=self.date, duration=dt.timedelta(days=1), resolution=5)
+        changes = self.find_changes(drdata)
+        str_down_times = []
+        str_up_times = []
+        for i in changes:
+            if (i[0] == 1):
+                str_up_times.append(i[1:])
+            else:
+                str_down_times.append(i[1:])
+        down_times = []
+        for i in str_down_times:
+            down_time = [dt.datetime.strptime(j, '%d-%b-%y %H:%M:%S.%f') for j in i]
+            down_times.append(down_time)
+        up_times = []
+        for i in str_up_times:
+            up_time = [dt.datetime.strptime(j, '%d-%b-%y %H:%M:%S.%f') for j in i]
+            up_times.append(up_time)
+        self.down_times = down_times
+        self.up_times = up_times
+        return
+
+    def get_recipe_2(self):
+        R_recipe_tag = 'PEL1.MIXR1.PAS.XI.04.DCS'
+        main_tag = '0.UTIL0.RECIPE.NUM'
+        bento_tag = 'PEL1.MIXR1.RECIPE'
+        ELCD_acid_tag = 'PEL1.MIXR1.PPHO.FQ.01.SP'
+        R_plnt_df = self.fetch_tag_detailed(R_recipe_tag, start=self.starttime, end=self.endtime, resolution=1)
+        main_df = self.fetch_tag_detailed(main_tag, start=self.starttime, end=self.endtime, resolution=1)
+        bento_df = self.fetch_tag_detailed(bento_tag, start=self.starttime, end=self.endtime, resolution=1)
+        R_plnt_df['VALUE'] = R_plnt_df['VALUE'].round(0)
+        main_df['VALUE'] = main_df['VALUE'].round(0)
+        bento_df['VALUE'] = bento_df['VALUE'].round(0)
+        R_plnt_df = R_plnt_df.rename(columns={'VALUE': 'R_plant'})
+        main_df = main_df.rename(columns={'VALUE': 'Main'})
+        bento_df = bento_df.rename(columns={'VALUE': 'Bento'})
+        recipe_df = pd.concat([main_df, R_plnt_df['R_plant'], bento_df['Bento']], axis=1)
+        prev_df = recipe_df[['Main', 'R_plant', 'Bento']].shift(1)
+        mask = (recipe_df[['Main', 'R_plant', 'Bento']] != prev_df).any(axis=1)
+        changes = recipe_df[mask]
+        changes = changes.reset_index(drop=True)
+        changes['TS'] = pd.to_datetime(changes['TS'], format='%d-%b-%y %H:%M:%S.%f')
+        runs = []
+        for (i, row) in changes.iterrows():
+            if ((i + 1) < len(changes)):
+                temp = [[row['Main'], row['R_plant'], row['Bento']], row['TS'].to_pydatetime(), changes.loc[((i + 1), 'TS')].to_pydatetime()]
+                runs.append(temp)
+            elif ((i + 1) == len(changes)):
+                temp = [[row['Main'], row['R_plant'], row['Bento']], row['TS'].to_pydatetime(), self.endtime]
+                runs.append(temp)
+        self.production_run_times = runs
+        return
+
+    def get_recipe(self):
+        R_recipe_tag = 'PEL1.MIXR1.PAS.XI.04.DCS'
+        main_tag = '0.UTIL0.RECIPE.NUM'
+        bento_tag = 'PEL1.MIXR1.RECIPE'
+        R_plnt_df = self.fetch_tag_detailed(R_recipe_tag, start=self.starttime, end=self.endtime, resolution=1)
+        main_df = self.fetch_tag_detailed(main_tag, start=self.starttime, end=self.endtime, resolution=1)
+        bento_df = self.fetch_tag_detailed(bento_tag, start=self.starttime, end=self.endtime, resolution=1)
+        R_plnt_df['VALUE'] = R_plnt_df['VALUE'].round(0)
+        main_df['VALUE'] = main_df['VALUE'].round(0)
+        bento_df['VALUE'] = bento_df['VALUE'].round(0)
+        R_plnt_df = R_plnt_df.rename(columns={'VALUE': 'R_plant'})
+        main_df = main_df.rename(columns={'VALUE': 'Main'})
+        bento_df = bento_df.rename(columns={'VALUE': 'Bento'})
+        recipe_df = pd.concat([main_df, R_plnt_df['R_plant'], bento_df['Bento']], axis=1)
+        prev_df = recipe_df[['Main', 'R_plant', 'Bento']].shift(1)
+        mask = (recipe_df[['Main', 'R_plant', 'Bento']] != prev_df).any(axis=1)
+        changes = recipe_df[mask]
+        changes = changes.reset_index(drop=True)
+        changes['TS'] = pd.to_datetime(changes['TS'], format='%d-%b-%y %H:%M:%S.%f')
+        runs = []
+        for (i, row) in changes.iterrows():
+            if ((i + 1) < len(changes)):
+                temp = [[row['Main'], row['R_plant'], row['Bento']], row['TS'].to_pydatetime(), changes.loc[((i + 1), 'TS')].to_pydatetime()]
+                runs.append(temp)
+            elif ((i + 1) == len(changes)):
+                temp = [[row['Main'], row['R_plant'], row['Bento']], row['TS'].to_pydatetime(), self.endtime]
+                runs.append(temp)
+        self.production_run_times = runs
+        return
+
+    def get_setpoints(self):
+        recipe_runs = []
+
+        def concat_sp_df(dict_of_tags, start, end):
+            SP_df = {}
+            for i in dict_of_tags:
+                SP_df[i] = self.fetch_tag_detailed(dict_of_tags[i], start=start, end=end)
+                SP_df[i] = SP_df[i].rename(columns={'VALUE': i})
+            target_df_key = next(iter(dict_of_tags))
+            target_df = SP_df[target_df_key]
+            Inter = pd.DataFrame()
+            for (df_name, df) in SP_df.items():
+                if (df_name != target_df_key):
+                    Inter = pd.concat([Inter, df.iloc[(:, (- 1))]], axis=1)
+            SPs = pd.concat([target_df, Inter], axis=1)
+            return SPs
+
+        def sp_changes(df, recipe):
+            prev_values = df.iloc[(:, 1:)].shift(1)
+            mask = (df.iloc[(:, 1:)] != prev_values).any(axis=1)
+            df['TS'] = pd.to_datetime(df['TS'], format='%d-%b-%y %H:%M:%S.%f')
+            changed_rows = df[mask]
+            changed_rows = changed_rows.reset_index(drop=True)
+            changed_rows['TS'] = pd.to_datetime(changed_rows['TS'], format='%d-%b-%y %H:%M:%S.%f')
+            runs = []
+            for (i, row) in changed_rows.iterrows():
+                setpoints = [i for i in row[1:]]
+                if ((i + 1) < len(changed_rows)):
+                    temp = [(recipe + setpoints), row['TS'].to_pydatetime(), changed_rows.loc[((i + 1), 'TS')].to_pydatetime()]
+                    runs.append(temp)
+                elif (((i + 1) == len(changed_rows)) and (abs((row['TS'].to_pydatetime() - df['TS'].iloc[(- 1)].to_pydatetime()).total_seconds()) > 300)):
+                    temp = [(recipe + setpoints), row['TS'].to_pydatetime(), df['TS'].iloc[(- 1)].to_pydatetime()]
+                    runs.append(temp)
+            return runs
+        ELCD_std = {'acid': 'PEL1.MIXR1.PPHO.FQ.01.SP', 'osf': 'PEL1.MIXR1.OSF.WC.01.SP'}
+        ELCD_wf = {'acid': 'PEL1.MIXR1.PPHO.FQ.01.SP', 'osf': 'PEL1.MIXR1.OSF.WC.01.SP', 'wf': 'PEL1.MIXR1.WF.WC.01.SP'}
+        C_Carbons = {'f04': 'KLN1.MIXR1.PPHO.FC.01.SP', 'f05': 'KLN1.MIXR2.PPHO.FC.01.SP', 'f06': 'KLN1.MIXR3.PPHO.FC.01.SP', 'w01': 'KLN1.MIXR1.SAW.WC.01.SP', 'W02': 'KLN1.MIXR2.SAW.WC.01.SP', 'W03': 'KLN1.MIXR3.SAW.WC.01.SP'}
+        for i in self.production_run_times:
+            if (i[0][0] <= 6):
+                SPs = concat_sp_df(C_Carbons, i[1], i[2])
+            if (i[0][0] > 6):
+                if (i[0][1] == 1):
+                    SPs = concat_sp_df(ELCD_std, i[1], i[2])
+                elif (i[0][1] == 2):
+                    SPs = concat_sp_df(ELCD_wf, i[1], i[2])
+            runs = sp_changes(SPs, i[0])
+            recipe_runs += runs
+        self.production_runs = recipe_runs
+
+    def prune_production_runs(self):
+
+        def is_within_margin(time1, time2, margin_mins):
+            time_diff = (time1 - time2)
+            margin = dt.timedelta(minutes=margin_mins)
+            return (time_diff <= margin)
+        filtered_runs = []
+        for i in self.production_runs:
+            if (abs((i[2] - i[1]).total_seconds()) > 180):
+                filtered_runs.append(i)
+        concated_runs = []
+        if (len(filtered_runs) > 1):
+            current_m = filtered_runs[0]
+            for i in range(1, len(filtered_runs)):
+                current_e = filtered_runs[i]
+                if ((current_e[0] == current_m[0]) and is_within_margin(current_m[2], current_e[1], 180)):
+                    current_m[2] = current_e[2]
+                else:
+                    concated_runs.append(current_m)
+                    current_m = current_e
+            concated_runs.append(current_m)
+        self.production_runs = concated_runs
+        return
+
+    def get_runs(self):
+        runs = []
+        for i in self.production_runs:
+            r = Production_run(date=self.date, start=i[1], end=i[2], recipe=i[0])
+            runs.append(r)
+        self.production_runs = runs
+        return
+op26=>operation: class Production_run():
+
+    def __init__(self, date, start, end, recipe):
+        self.date = date
+        self.starttime = start
+        self.endtime = end
+        self.recipe = recipe
+        self.recipe_str = None
+        self.get_recipe_str()
+        self.conditions = None
+        self.get_conditions()
+        self.V901_ctrl_figs = None
+        self.mixes_duration = None
+
+    def get_recipe_str(self):
+        if (len(self.recipe) == 5):
+            self.recipe_str = 'CNR115'
+        elif (len(self.recipe) == 6):
+            if (self.recipe[(- 1)] < 70):
+                self.recipe_str = 'CNR115LB'
+            else:
+                self.recipe_str = 'CNR120'
+        elif (len(self.recipe) == 9):
+            carbon = {1.0: 'recipe2 2kilns', 2.0: 'recipe2', 3.0: 'recipe4 2kilns', 4.0: 'recipe4', 5.0: 'recipe6 2 kilns', 6.0: 'recipe6'}
+            self.recipe_str = carbon[self.recipe[0]]
+
+    def get_mixes_duration(self):
+
+        def ctrl_data_filter(df, threshold):
+            df.loc[((df['VALUE'] < threshold), 'VALUE')] = 0
+            totals = df.loc[((df['VALUE'] != 0) & (df['VALUE'].shift(1) == 0))].copy()
+            totals['MR'] = abs((totals['VALUE'] - totals['VALUE'].shift(1)))
+            self.mixes_duration = len(totals)
+            return totals
+        ctrl = {}
+        if (self.recipe[0] <= 6):
+            return
+        elif (self.recipe[1] == 2):
+            tags = ['osf_tot', 'wf_tot', 'acid_tot']
+            for i in tags:
+                if (i == 'wf_tot'):
+                    threshold = 20
+                else:
+                    threshold = 100
+                temp = ctrl_data_filter(self.conditions[i], threshold=threshold)
+        elif (self.recipe[1] == 1):
+            tags = ['osf_tot', 'acid_tot']
+            for i in tags:
+                temp = ctrl_data_filter(self.conditions[i], threshold=100)
+
+    def fetch_tag(self, tag, start=None, duration=None, end=None, resolution=5):
+        '\n        Takes a tag name, duration and end point and submits a sql query returning\n        data with 5s intervals as default for the period asked for.\n        '
+        if ((start is None) and (duration is None) and (end is None)):
+            raise ValueError('You need to provie at least 2 points of referance in time to use this function')
+        if (start is None):
+            if ((duration is None) or (end is None)):
+                raise ValueError('If you provide no start you must provide an end or duration')
+            start = (end - duration)
+        elif (duration is None):
+            if (end is None):
+                raise ValueError('If no duration is provided you must provide an end with a start')
+            duration = (start - end)
+        elif (end is None):
+            end = (start + duration)
+        con = pyodbc.connect('Driver={AspenTech SQLplus};HOST=192.168.9.47;PORT=10014')
+        end_str = end.strftime('%Y-%m-%d %H:%M:%S')
+        start_str = start.strftime('%Y-%m-%d %H:%M:%S')
+        sql = ('select "IP_TREND_TIME" as TS, "IP_TREND_VALUE" as VALUE from "%s"  where TS between TIMESTAMP\'%s\' and TIMESTAMP\'%s\'' % (tag, start_str, end_str))
+        cursor = con.cursor()
+        result = cursor.execute(sql)
+        rows = result.fetchall()
+        cols = []
+        for i in result.description:
+            cols.append(i[0])
+        if (len(rows) >= 1):
+            data = pd.DataFrame(data=np.array(rows), columns=cols)
+            data['VALUE'] = data['VALUE'].astype(float)
+            data['VALUE'] = data['VALUE'].round(4)
+            data['TS'] = pd.to_datetime(data['TS'], format='%d-%b-%y %H:%M:%S.%f')
+        else:
+            data = self.fetch_tag_detailed(tag=tag, start=start, end=end, resolution=1)
+        data.name = (start.strftime(' %Y-%m-%d %H:%M ') + tag)
+        return data
+
+    def fetch_tag_detailed(self, tag, start=None, duration=None, end=None, resolution=5):
+        '\n        Takes a tag name, duration and end point and submits a sql query returning\n        data with 5s intervals as default for the period asked for.\n        '
+        if ((start is None) and (duration is None) and (end is None)):
+            raise ValueError('You need to provie at least 2 points of referance in time to use this function')
+        if (start is None):
+            if ((duration is None) or (end is None)):
+                raise ValueError('If you provide no start you must provide an end or duration')
+            start = (end - duration)
+        elif (duration is None):
+            if (end is None):
+                raise ValueError('If no duration is provided you must provide an end with a start')
+            duration = (start - end)
+        elif (end is None):
+            end = (start + duration)
+        con = pyodbc.connect('Driver={AspenTech SQLplus};HOST=192.168.9.47;PORT=10014')
+        end_str = end.strftime('%Y-%m-%d %H:%M:%S')
+        start_str = start.strftime('%Y-%m-%d %H:%M:%S')
+        sql = ("select TS, VALUE from HISTORY  where NAME='%s' and PERIOD=%s*10 and TS between TIMESTAMP'%s' and TIMESTAMP'%s'" % (tag, resolution, start_str, end_str))
+        cursor = con.cursor()
+        result = cursor.execute(sql)
+        rows = result.fetchall()
+        cols = []
+        for i in result.description:
+            cols.append(i[0])
+        data = pd.DataFrame(data=np.array(rows), columns=cols)
+        data['VALUE'] = data['VALUE'].astype(float)
+        data['VALUE'] = data['VALUE'].round(4)
+        data['TS'] = pd.to_datetime(data['TS'], format='%d-%b-%y %H:%M:%S.%f')
+        data.name = tag
+        return data
+
+    def get_conditions(self):
+        KPVs = {'osf_tot': 'PEL1.MIXR1.OSF.FQ.01.pv', 'wf_tot': 'PEL1.MIXR1.WF.FQ.01.PV', 'acid_tot': 'PEL1.MIXR1.PPHO.FQ.01.PV', 'S93': 'PEL1.PELL2.PAS.SC.01.PV', 'S94': 'PEL1.PELL2.PAS.SC.01.PV', 'T91': 'PEL1.DRYB1.FG.TC.01.PV', 'T93': 'PEL1.DRYB1.FG.TC.03.PV', 'T94': 'PEL1.DRYB1.FG.TC.04.PV', 'T95': 'PEL1.DRYB1.FG.TC.05.PV', 'T96': 'PEL1.DRYB1.PAS.TI.01.PV', 'S94': 'PEL1.DRYB1.PAS.SI.01.PV', 'pres_z1': 'PEL1.DRYB1.FG.PI.01.PV', 'F92': 'PEL1.DRYB1.STM.FI.01.PV', 'W01': 'KLN1.MIXR1.SAW.WC.01.PV', 'W02': 'KLN1.MIXR2.SAW.WC.01.PV', 'W03': 'KLN1.MIXR3.SAW.WC.01.PV', 'F04': 'KLN1.MIXR1.PPHO.FC.01.PV', 'F05': 'KLN1.MIXR2.PPHO.FC.01.PV', 'F06': 'KLN1.MIXR3.PPHO.FC.01.PV', 'T01': 'KLN1.BED1.UWAC.TC.01.PV', 'T02': 'KLN1.BED2.UWAC.TC.01.PV', 'T03': 'KLN1.BED3.UWAC.TC.01.PV', 'T17': 'KLN1.VENT1.FG.TI.01.PV', 'T18': 'KLN1.VENT2.FG.TI.01.PV', 'T19': 'KLN1.VENT3.FG.TI.01.PV', 'F01': 'KLN1.BURN1.NG.FI.01.PV', 'F02': 'KLN1.BURN2.NG.FI.01.PV', 'F03': 'KLN1.BURN3.NG.FI.01.PV', 'F16': 'KLN1.EXHA1.FG.FI.01.PV', 'F07': 'WSH1.TK3.PPHO.FC.01.PV', 'F09': 'WSH1.TK2.PPHO.FC.01.PV', 'F25': 'WSH1.TK6.FW.FC.01.PV', 'F26': 'WSH1.TK7.FW.FC.01.PV', 'F27': 'WSH1.TK7.FW.FC.02.PV', 'F30': 'WSH1.TK8.DNAOH.FI.01.PV', 'F31': 'WSH1.TK8.DNAOH.FI.02.PV', 'P06': 'WSH1.WSH1.FG.PI.02.PV', 'C01': 'WSH1.TK8.DNAOH.AC.01.PV', 'C02': 'WSH1.WSH1.WW.AI.01.PV', 'F28': 'TK1.TK2.PPHO.FC.01.PV', 'F11_fresh': 'TK1.TK1.FPHO.FC.01.PV', 'F11_plant': 'TK1.TK1.PHO.FC.01.PV', 'D01': 'TK1.TK3.PPHO.DI.01.PV', 'D02': 'TK1.TK2.PPHO.DI.01.PV', 'L302': 'DRYR1.FEED3.WAC.SC.02.SP', 'T06': 'DRYR1.EXHA1.FG.TC.01.PV', 'T41A': 'DRYR1.BED1.GAC.TC.01.PV', 'T41B': 'DRYR1.BED1.GAC.TC.02.PV'}
+        ELCD_KPVs = {'osf_tot': 'PEL1.MIXR1.OSF.FQ.01.pv', 'wf_tot': 'PEL1.MIXR1.WF.FQ.01.PV', 'acid_tot': 'PEL1.MIXR1.PPHO.FQ.01.PV', 'S93': 'PEL1.PELL2.PAS.SC.01.PV', 'S94': 'PEL1.PELL2.PAS.SC.01.PV', 'T91': 'PEL1.DRYB1.FG.TC.01.PV', 'T93': 'PEL1.DRYB1.FG.TC.03.PV', 'T94': 'PEL1.DRYB1.FG.TC.04.PV', 'T95': 'PEL1.DRYB1.FG.TC.05.PV', 'T96': 'PEL1.DRYB1.PAS.TI.01.PV', 'S94': 'PEL1.DRYB1.PAS.SI.01.PV', 'pres_z1': 'PEL1.DRYB1.FG.PI.01.PV', 'F92': 'PEL1.DRYB1.STM.FI.01.PV', 'T03': 'KLN1.BED3.UWAC.TC.01.PV', 'T19': 'KLN1.VENT3.FG.TI.01.PV', 'F03': 'KLN1.BURN3.NG.FI.01.PV', 'F16': 'KLN1.EXHA1.FG.FI.01.PV', 'F07': 'WSH1.TK3.PPHO.FC.01.PV', 'F09': 'WSH1.TK2.PPHO.FC.01.PV', 'F25': 'WSH1.TK6.FW.FC.01.PV', 'F26': 'WSH1.TK7.FW.FC.01.PV', 'F27': 'WSH1.TK7.FW.FC.02.PV', 'F30': 'WSH1.TK8.DNAOH.FI.01.PV', 'F31': 'WSH1.TK8.DNAOH.FI.02.PV', 'P06': 'WSH1.WSH1.FG.PI.02.PV', 'C01': 'WSH1.TK8.DNAOH.AC.01.PV', 'C02': 'WSH1.WSH1.WW.AI.01.PV', 'F28': 'TK1.TK2.PPHO.FC.01.PV', 'F11_fresh': 'TK1.TK1.FPHO.FC.01.PV', 'F11_plant': 'TK1.TK1.PHO.FC.01.PV', 'D01': 'TK1.TK3.PPHO.DI.01.PV', 'D02': 'TK1.TK2.PPHO.DI.01.PV', 'L302': 'DRYR1.FEED3.WAC.SC.02.SP', 'T06': 'DRYR1.EXHA1.FG.TC.01.PV', 'T41A': 'DRYR1.BED1.GAC.TC.01.PV', 'T41B': 'DRYR1.BED1.GAC.TC.02.PV'}
+        Ccarbon_KPVs = {'W01': 'KLN1.MIXR1.SAW.WC.01.PV', 'W02': 'KLN1.MIXR2.SAW.WC.01.PV', 'W03': 'KLN1.MIXR3.SAW.WC.01.PV', 'F04': 'KLN1.MIXR1.PPHO.FC.01.PV', 'F05': 'KLN1.MIXR2.PPHO.FC.01.PV', 'F06': 'KLN1.MIXR3.PPHO.FC.01.PV', 'T01': 'KLN1.BED1.UWAC.TC.01.PV', 'T02': 'KLN1.BED2.UWAC.TC.01.PV', 'T03': 'KLN1.BED3.UWAC.TC.01.PV', 'T17': 'KLN1.VENT1.FG.TI.01.PV', 'T18': 'KLN1.VENT2.FG.TI.01.PV', 'T19': 'KLN1.VENT3.FG.TI.01.PV', 'F01': 'KLN1.BURN1.NG.FI.01.PV', 'F02': 'KLN1.BURN2.NG.FI.01.PV', 'F03': 'KLN1.BURN3.NG.FI.01.PV', 'F16': 'KLN1.EXHA1.FG.FI.01.PV', 'F07': 'WSH1.TK3.PPHO.FC.01.PV', 'F09': 'WSH1.TK2.PPHO.FC.01.PV', 'F25': 'WSH1.TK6.FW.FC.01.PV', 'F26': 'WSH1.TK7.FW.FC.01.PV', 'F27': 'WSH1.TK7.FW.FC.02.PV', 'F30': 'WSH1.TK8.DNAOH.FI.01.PV', 'F31': 'WSH1.TK8.DNAOH.FI.02.PV', 'P06': 'WSH1.WSH1.FG.PI.02.PV', 'C01': 'WSH1.TK8.DNAOH.AC.01.PV', 'C02': 'WSH1.WSH1.WW.AI.01.PV', 'F28': 'TK1.TK2.PPHO.FC.01.PV', 'F11_fresh': 'TK1.TK1.FPHO.FC.01.PV', 'F11_plant': 'TK1.TK1.PHO.FC.01.PV', 'D01': 'TK1.TK3.PPHO.DI.01.PV', 'D02': 'TK1.TK2.PPHO.DI.01.PV', 'L302': 'DRYR1.FEED3.WAC.SC.02.SP', 'T06': 'DRYR1.EXHA1.FG.TC.01.PV', 'T41A': 'DRYR1.BED1.GAC.TC.01.PV', 'T41B': 'DRYR1.BED1.GAC.TC.02.PV'}
+        conditions = {}
+        if (self.recipe[0] <= 6):
+            for i in Ccarbon_KPVs:
+                conditions[i] = self.fetch_tag(Ccarbon_KPVs[i], start=self.starttime, end=self.endtime)
+                conditions[i].name = (self.starttime.strftime(' %Y-%m-%d') + i)
+        if (self.recipe[0] > 6):
+            for i in ELCD_KPVs:
+                conditions[i] = self.fetch_tag(ELCD_KPVs[i], start=self.starttime, end=self.endtime)
+                conditions[i].name = (self.starttime.strftime(' %Y-%m-%d') + i)
+        self.conditions = conditions
+
+    def V_901_ctrl_chart(self):
+
+        def ctrl_data_filter(df, threshold):
+            df.loc[((df['VALUE'] < threshold), 'VALUE')] = 0
+            totals = df.loc[((df['VALUE'] != 0) & (df['VALUE'].shift(1) == 0))].copy()
+            totals['MR'] = abs((totals['VALUE'] - totals['VALUE'].shift(1)))
+            self.mixes_duration = len(totals)
+            return totals
+
+        def plot_IMR(df, tag, SP):
+            SMALL_SIZE = 6
+            MEDIUM_SIZE = 8
+            BIGGER_SIZE = 10
+            plt.rc('font', size=SMALL_SIZE)
+            plt.rc('axes', titlesize=MEDIUM_SIZE)
+            plt.rc('axes', labelsize=MEDIUM_SIZE)
+            plt.rc('xtick', labelsize=SMALL_SIZE)
+            plt.rc('ytick', labelsize=SMALL_SIZE)
+            plt.rc('legend', fontsize=SMALL_SIZE)
+            plt.rc('figure', titlesize=BIGGER_SIZE)
+            memfile = BytesIO()
+            xbar = df['VALUE'].mean()
+            mrbar = df['MR'].mean()
+            UCL = (xbar + (mrbar * 2.66))
+            LCL = (xbar - (mrbar * 2.66))
+            rUCL = (mrbar * 3.27)
+            sig = (mrbar / 1.128)
+            sigma = df['VALUE'].std()
+            if (tag.split('_')[0] == 'acid'):
+                if (self.recipe[1] == 1):
+                    spec = {'USL': 490, 'LSL': 450}
+                elif (self.recipe[1] == 2):
+                    spec = {'USL': 530, 'LSL': 470}
+            elif (tag.split('_')[0] == 'wf'):
+                if (self.recipe[(- 1)] > 70):
+                    spec = {'USL': 90, 'LSL': 100}
+                else:
+                    spec = {'USL': 60, 'LSL': 40}
+            elif (tag.split('_')[0] == 'osf'):
+                if (self.recipe[1] == 1):
+                    spec = {'USL': 510, 'LSL': 490}
+                elif (self.recipe[1] == 2):
+                    if (self.recipe[(- 1)] > 70):
+                        spec = {'USL': 310, 'LSL': 290}
+                    else:
+                        spec = {'USL': 460, 'LSL': 440}
+            Cp = round(((spec['USL'] - spec['LSL']) / (6 * sig)), 2)
+            Cpk = round(min([((spec['USL'] - xbar) / (3 * sig)), ((xbar - spec['LSL']) / (3 * sig))]), 2)
+            Pp = round(((spec['USL'] - spec['LSL']) / (6 * sigma)), 2)
+            Ppk = round(min([((spec['USL'] - xbar) / (3 * sigma)), ((xbar - spec['LSL']) / (3 * sigma))]), 2)
+            (fig, ax) = plt.subplots(nrows=2, sharex=True)
+            fig.set_size_inches(7, 2.4)
+            (ax1, ax2) = ax.flatten()
+            ax1.plot(df['TS'], df['VALUE'], linestyle='-', marker='.', markersize=5, color='red', label='VALUE')
+            if (self.recipe[1] == 1):
+                ax1.set_title('{} CNR115 {} addition, from {} to {}. {} mixes. Cp = {}, Cpk = {}, Pp = {}, Ppk = {}'.format(self.starttime.strftime('%Y-%m-%d'), tag.split('_')[0], self.starttime.strftime('%H:%M'), self.endtime.strftime('%H:%M'), str(len(df)), Cp, Cpk, Pp, Ppk))
+            elif (self.recipe[1] == 2):
+                if (self.recipe[(- 1)] > 70):
+                    ax1.set_title('{} CNR120 {} addition, from {} to {}. {} mixes. Cp = {}, Cpk = {}, Pp = {}, Ppk = {}'.format(self.starttime.strftime('%Y-%m-%d'), tag.split('_')[0], self.starttime.strftime('%H:%M'), self.endtime.strftime('%H:%M'), str(len(df)), Cp, Cpk, Pp, Ppk))
+                else:
+                    ax1.set_title('{} CNR115LB {} addition, from {} to {}. {} mixes. Cp = {}, Cpk = {}, Pp = {}, Ppk = {}'.format(self.starttime.strftime('%Y-%m-%d'), tag.split('_')[0], self.starttime.strftime('%H:%M'), self.endtime.strftime('%H:%M'), str(len(df)), Cp, Cpk, Pp, Ppk))
+            if (tag.split('_')[0] != 'acid'):
+                ax1.axhline(spec['USL'], color='lime', label='USL = {}'.format(str(spec['USL'])))
+                ax1.axhline(spec['LSL'], color='lime', label='USL = {}'.format(str(spec['LSL'])))
+            ax1.axhline(xbar, color='green', label='xbar = {}'.format(str(round(xbar, 2))))
+            ax1.axhline(UCL, color='orange', linestyle='--', label='UCL = {}'.format(str(round(UCL, 2))))
+            ax1.axhline(LCL, color='orange', linestyle='--', label='LCL = {}'.format(str(round(LCL, 2))))
+            if isinstance(SP, float):
+                ax1.axhline(SP, color='magenta', linestyle='dotted', label='SP = {}'.format(str(SP)))
+            ax2.plot(df['TS'], df['MR'], color='red', marker='.', markersize=5, linestyle='-', label='MR')
+            ax2.axhline(mrbar, color='green', label='MRbar = {}'.format(str(round(mrbar, 2))))
+            ax2.axhline(rUCL, color='orange', label='MR UCL = {}'.format(str(round(rUCL, 2))))
+            ax2.set_xlabel('Time')
+            ax2.xaxis.set_major_formatter(mdates.DateFormatter('%d %H:%M'))
+            ax1.set_ylabel('Value')
+            ax2.set_ylabel('MR')
+            plt.tight_layout()
+            box1 = ax1.get_position()
+            ax1.set_position([box1.x0, box1.y0, (box1.width * 0.85), box1.height])
+            box2 = ax2.get_position()
+            ax2.set_position([box2.x0, box2.y0, (box2.width * 0.85), box2.height])
+            ax2.text(0.5, (- 0.1), 'Cp = {}, Cpk = {}, Pp = {}, Ppk = {}'.format(Cp, Cpk, Pp, Ppk), size=SMALL_SIZE, ha='center')
+            ax1.legend(loc='center right', bbox_to_anchor=(1.18, 0.5))
+            ax2.legend(loc='center right', bbox_to_anchor=(1.18, 0.5))
+            plt.savefig(memfile)
+            return memfile
+        ctrl = {}
+        if (self.recipe[0] <= 6):
+            return
+        elif (self.recipe[1] == 2):
+            tags = ['osf_tot', 'wf_tot', 'acid_tot']
+            for i in tags:
+                if (i == 'wf_tot'):
+                    threshold = 20
+                else:
+                    threshold = 100
+                temp = ctrl_data_filter(self.conditions[i], threshold=threshold)
+                for (index, row) in temp.iterrows():
+                    print(row['TS'], i, ' ', row['VALUE'])
+                if (i == 'wf_tot'):
+                    ctrl[i] = plot_IMR(temp, i, self.recipe[5])
+                elif (i == 'osf_tot'):
+                    ctrl[i] = plot_IMR(temp, i, self.recipe[4])
+                elif (i == 'acid_tot'):
+                    ctrl[i] = plot_IMR(temp, i, self.recipe[3])
+            self.V901_ctrl_figs = ctrl
+            return
+        elif (self.recipe[1] == 1):
+            tags = ['osf_tot', 'acid_tot']
+            for i in tags:
+                temp = ctrl_data_filter(self.conditions[i], threshold=100)
+                for (index, row) in temp.iterrows():
+                    print(i, ' ', row)
+                if (i == 'osf_tot'):
+                    ctrl[i] = plot_IMR(temp, i, self.recipe[4])
+                elif (i == 'acid_tot'):
+                    ctrl[i] = plot_IMR(temp, i, self.recipe[3])
+            self.V901_ctrl_figs = ctrl
+            return
+        else:
+            print('the recipe for ELCD is neither 1 nor 2')
+            return
+cond29=>condition: for i in range(1, 30)
+op38=>operation: D = Production_day(date=(dt.datetime(year=2023, month=3, day=31) - dt.timedelta(days=i)))
+sub40=>subroutine: D.ELCD_control()
+
+op2->op4
+op4->op6
+op6->op8
+op8->op10
+op10->op12
+op12->op14
+op14->op16
+op16->op18
+op18->op20
+op20->op22
+op22->op24
+op24->op26
+op26->cond29
+cond29(yes)->op38
+op38->sub40
+sub40(left)->cond29
+</textarea></div>
+        <div><button id="run" type="button">Run</button> <button onclick="HelpText()">Format Help</button></div>
+        <div id="HelpTextBlock" style="display:none"><br/>Conditions can also be redirected like cond(yes, bottom) or cond(yes, right)
+... and the other symbols too... like sub1(right)<br/>
+You can also tweak the <b>diagram.drawSVG('diagram', {});</b> script in this file for more changes<br/>
+This is based on <a href="https://github.com/adrai/flowchart.js">flowchart.js on github</a> and <a href="http://flowchart.js.org">http://flowchart.js.org</a> more documentation can be found over there.
+</div><br/><div id="svgbase64"></div>
+        <div id="pngbase64"></div>
+
+        <div id="canvas"></div>
+    </body>
+</html>
